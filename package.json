@@ -1,0 +1,9 @@
+{
+  "name": "origami-css",
+  "version": "1.0.0",
+  "description": "Base CSS framework for Origami Zen admin and Snow theme",
+  "main": "base.scss",
+  "repository": "https://github.com/origami-cms/css",
+  "author": "Tristan Matthias <hello@tristanmatthias.com>",
+  "license": "MIT"
+}

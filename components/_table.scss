@@ -1,0 +1,48 @@
+table {
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    width: 100%;
+    tr {
+        th {
+            text-transform: uppercase;
+            color: color('shade-2');
+            font-weight: bold;
+            letter-spacing: 1px;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: left;
+            font-size: fs('small');
+        }
+
+        th, td {
+            padding: 0 4rem;
+        }
+
+        td {
+            background-color: color('white');
+            height: 4rem;
+            line-height: 4rem;
+            margin-bottom: 2rem;
+
+        }
+        th.icon, td.icon {
+            padding: 0 size('small');
+            width: size('main');
+            text-align: center;
+        }
+    }
+
+    &.selectable {
+        tr:hover:not(.row-header) {
+            &, td {
+                background-color: color('shade-0');
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.rows-split {
+        border-collapse: separate;
+        border-spacing: 0 0.5rem;
+    }
+}

@@ -1,0 +1,25 @@
+$border: 1px solid color('white-0');
+.tabs {
+    height: 4rem;
+    line-height: 4rem;
+    border-bottom: $border;
+    user-select: none;
+
+    .tab {
+        cursor: pointer;
+        display: inline-block;
+        border-right: $border;
+        padding: 0 size('small');
+
+        &.icon-only {
+            padding: 0;
+            width: 4rem;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: color('shade-0');
+        }
+    }
+
+}

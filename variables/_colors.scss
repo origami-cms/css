@@ -1,0 +1,42 @@
+$main: #693a91;
+$colors: (
+    main: $main,
+    'main-softest': rgba($main, 0.025),
+    alt: #23a8e6,
+    accent: #f8aa12,
+    error: #f0543e,
+    accent-dark: #d4900c,
+    success: #28c787,
+    'white': #ffffff,
+    'white-0': rgba(#ffffff, 0.1),
+    'white-off': #f7f6f8,
+
+    'shade-0': rgba($main, 0.05),
+    'shade-1': rgba($main, 0.1),
+    'shade-2': rgba($main, 0.3),
+    'shade-3': rgba($main, 0.5),
+    'shade-4': rgba($main, 0.7),
+    'shade-5': rgba($main, 1),
+
+    );
+
+    @each $color, $val in $colors {
+        $colors: map-merge($colors, ($color + '-dark': darken($val, 10%)));
+        $colors: map-merge($colors, ($color + '-light': lighten($val, 10%)));
+        $colors: map-merge($colors, ($color + '-soft': rgba($val, 0.5)));
+        $colors: map-merge($colors, ($color + '-soft-extra': rgba($val, 0.2)));
+    }
+
+$gradient-main: linear-gradient(135deg, #9c4ba4, $main);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+
+$colors: map-merge($colors, (
+    'text': $main,
+    'text-dark': #734b86,
+    'bg': color('white')
+));
+

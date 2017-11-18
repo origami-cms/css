@@ -1,0 +1,23 @@
+$multiplier: 2;
+.i {
+    display: inline-block;
+    width: size('main') * $multiplier;
+    height: size('main') * $multiplier;
+    vertical-align: middle;
+    & use {
+        fill: color('main');
+    }
+
+    @each $size, $val in $sizes {
+        &.#{$size} {
+            width: $val * $multiplier;
+            height: $val * $multiplier;
+        }
+    }
+
+    @each $color, $val in $colors {
+        &.#{$color} use {
+            fill: $val;
+        }
+    }
+}

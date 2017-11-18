@@ -1,0 +1,21 @@
+$types: "margin" "padding";
+
+@each $type in $types {
+    @each $size, $val in $sizes {
+        &.#{$type}-#{$size} {
+            #{$type}: $val;
+        }
+        &.#{$type}-v-#{$size} {
+            #{$type}-top: $val;
+            #{$type}-bottom: $val;
+        }
+        &.#{$type}-h-#{$size} {
+            #{$type}-left: $val;
+            #{$type}-right: $val;
+        }
+        &.#{$type}-t-#{$size} { #{$type}-top: $val; }
+        &.#{$type}-l-#{$size} { #{$type}-left: $val; }
+        &.#{$type}-b-#{$size} { #{$type}-bottom: $val; }
+        &.#{$type}-r-#{$size} { #{$type}-rights: $val; }
+    }
+}

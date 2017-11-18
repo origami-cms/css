@@ -1,0 +1,16 @@
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
+
+@function size($size) {
+    @return map-get($sizes, $size);
+}
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+@function fs($size) {
+    @return map-get($fs, $size);
+}

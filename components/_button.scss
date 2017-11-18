@@ -1,0 +1,54 @@
+@mixin color($col) {
+    background-color: color($col);
+    &:not(.no-border) {
+        border-bottom: 4px solid color($col + '-dark');
+    }
+
+    &:hover {
+        background-color: color($col + '-light');
+    }
+
+    &:active {
+        background-color: color($col + '-dark');
+        &:not(.no-border) {
+            border-bottom: 0;
+            border-top: 4px solid color($col + '-dark');
+        }
+    }
+}
+button, .button {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    height: $button-height;
+    line-height: $button-height;
+    padding: $button-padding;
+    border-radius: $button-border-radius;
+    color: color('white');
+    transition: all $transition-time;
+
+    @include color('main');
+
+    @each $col, $val in $colors {
+        &.#{$col} {
+            @include color($col);
+        }
+    }
+
+    &.round {
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    &.has-icon {
+        padding-left: size('small');
+        .i {
+            vertical-align: top;
+        }
+    }
+
+    &.no-text {
+        padding: 0;
+    }
+}

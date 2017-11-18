@@ -1,0 +1,13 @@
+$default-height: 4rem;
+$default-border-radius: 0.4rem;
+$default-padding: 1rem;
+
+$transition-time: 0.15s;
+
+$input-height: $default-height;
+$input-border-radius: $default-border-radius;
+$input-padding: 0 $default-padding;
+
+$button-height: $default-height;
+$button-border-radius: $default-border-radius;
+$button-padding: 0 2 * $default-padding;
