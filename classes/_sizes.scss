@@ -19,3 +19,19 @@ $types: "margin" "padding";
         &.#{$type}-r-#{$size} { #{$type}-rights: $val; }
     }
 }
+
+@each $type in "width" "height" {
+    @each $size, $val in $sizes {
+        &.#{$type}-#{$size} {
+            #{$type}: $val;
+        }
+    }
+}
+
+@each $size, $val in $sizes {
+    &.size-#{$size} {
+        width: $val;
+        height: $val;
+    }
+}
+

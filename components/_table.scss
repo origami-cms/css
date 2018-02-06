@@ -1,8 +1,37 @@
 table {
     border-radius: $default-border-radius;
-    overflow: hidden;
-    width: 100%;
+    // overflow-y: hidden;
+    width: calc(100% + 4rem);
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    padding: 4rem 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+
     tr {
+        margin-bottom: 2rem;
+        height: 4rem;
+        line-height: 4rem;
+        @extend .rounded;
+        @extend .shadow-shade-1;
+
+        td {
+            border-style: solid none;
+        }
+
+        td:first-child {
+            border-left-style: solid;
+            border-top-left-radius: $default-border-radius;
+            border-bottom-left-radius: $default-border-radius;
+        }
+
+        td:last-child {
+            border-right-style: solid;
+            border-bottom-right-radius: $default-border-radius;
+            border-top-right-radius: $default-border-radius;
+        }
+
         th {
             text-transform: uppercase;
             color: color('shade-2');
@@ -16,14 +45,15 @@ table {
 
         th, td {
             padding: 0 4rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         td {
             background-color: color('white');
             height: 4rem;
             line-height: 4rem;
-            margin-bottom: 2rem;
-
         }
         th.icon, td.icon {
             padding: 0 size('small');
@@ -32,12 +62,10 @@ table {
         }
     }
 
-    &.selectable {
-        tr:hover:not(.row-header) {
-            &, td {
-                background-color: color('shade-0');
-                cursor: pointer;
-            }
+    &.selectable tr:hover:not(.row-header), tr.selected {
+        &, td {
+            background-color: color('shade-0');
+            cursor: pointer;
         }
     }
 

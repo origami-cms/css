@@ -1,5 +1,5 @@
 {
-  "name": "origami-css",
+  "name": "zen-css",
   "version": "1.0.0",
   "description": "Base CSS framework for Origami Zen admin and Snow theme",
   "main": "base.scss",

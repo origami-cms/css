@@ -1,16 +1,31 @@
 form {
-    input, select {
+    input, select, textarea {
         color: color('main');
         background-color: color('main-softest');
         height: $input-height;
         padding: $input-padding;
         border-radius: $input-border-radius;
-        border: 1px solid color('main-soft-extra');
-        box-shadow: inset 0.2rem 0.2rem 0.2rem rgba(color('main-dark'), 0.05);
+        border: none;
+        width: 100%;
+        border: 2px solid transparent;
 
         &:focus {
-            border: 1px solid color('main-soft');
+            border: 2px solid color('shade-2');
         }
+
+        &::placeholder {
+            color: color('shade-3');
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            user-select: none;
+        }
+    }
+
+    textarea {
+        min-height: $input-height * 2;
+        max-width: 100%;
     }
 
     select {
@@ -20,13 +35,51 @@ form {
         background-position: right center;
     }
 
-    .form-group {
+    .form-row {
+        display: block;
         margin-bottom: 1rem;
+        position: relative;
+        & > span {
+            margin-top: size('large');
+            margin-bottom: size('small');
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        & > .i,
+        & > zen-ui-icon {
+            position: absolute;
+            margin: 1rem;
+            & + input {
+                padding-left: $input-height;
+            }
+        }
+
+        label {
+            display: flex;
+
+            input {
+                flex: 2;
+            }
+        }
+        button {
+            flex-basis: $button-height;
+            padding: 0;
+            margin-left: size('small');
+        }
+
+
+
+        &.disabled {
+            .i {
+                opacity: 0.5;
+            }
+        }
     }
 
     &.full-field-width {
         width: 100%;
-        .form-group, input, button, select {
+        .form-group, input, button, select, textarea {
             width: 100%;
         }
     }
@@ -36,6 +89,16 @@ form {
             font-size: fs('large');
             color: color('alt');
             padding-top: size('small');
+            width: 100%;
+        }
+
+        & + fieldset {
+            margin-top: size('hero');
+            legend {
+                padding-top: size('hero');
+                border-top: $border-soft-extra;
+
+            }
         }
     }
 
@@ -52,16 +115,17 @@ form {
 
         &:checked + span {
             background-color: color('main');
+            border-color: color('main');
             background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwIDQwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjI5LjgsMTEuOSAxNi41LDI1LjIgMTAuMiwxOC45IDguOCwyMC40IDE2LjUsMjguMSAzMS4yLDEzLjQgIi8+PC9zdmc+);
         }
     }
 
     span {
         display: inline-block;
-        width: size('large');
-        height: size('large');
-        border: 2px solid color('shade-3');
-        border-radius: $input-border-radius;
+        width: size('small');
+        height: size('small');
+        border: 2px solid color('alt');
+        border-radius: $input-border-radius / 2;
         vertical-align: middle;
     }
 }

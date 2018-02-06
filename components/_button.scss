@@ -1,22 +1,4 @@
-@mixin color($col) {
-    background-color: color($col);
-    &:not(.no-border) {
-        border-bottom: 4px solid color($col + '-dark');
-    }
-
-    &:hover {
-        background-color: color($col + '-light');
-    }
-
-    &:active {
-        background-color: color($col + '-dark');
-        &:not(.no-border) {
-            border-bottom: 0;
-            border-top: 4px solid color($col + '-dark');
-        }
-    }
-}
-button, .button {
+button, .button, input[type='submit'] {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
@@ -27,14 +9,25 @@ button, .button {
     border-radius: $button-border-radius;
     color: color('white');
     transition: all $transition-time;
+    user-select: none;
+    background: gradient('main');
+    cursor: pointer;
 
-    @include color('main');
 
-    @each $col, $val in $colors {
-        &.#{$col} {
-            @include color($col);
-        }
+    &.hollow {
+        background: transparent;
     }
+
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    &:focus {
+        border: none;
+        filter: brightness(0.9);
+    }
+
 
     &.round {
         padding: 0;
@@ -45,10 +38,54 @@ button, .button {
         padding-left: size('small');
         .i {
             vertical-align: top;
+            margin-right: size('small');
+        }
+        .loader {
+            margin-top: size('small') / 2 ;
         }
     }
 
     &.no-text {
         padding: 0;
+        .i {
+            margin: 0;
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none
+    }
+
+    @each $name, $size in $sizes {
+        $multipier: 0.8;
+        $_size: $size * $multipier;
+        &.size-#{$name} {
+            height: $_size;
+            width: auto;
+            line-height: $_size;
+            font-size: (1.8/4) * $_size;
+            padding: 0 $_size / 2;
+        }
+    }
+
+    @each $name, $grad in $gradients {
+        &.#{$name} {
+            background: gradient($name);
+        }
+    }
+}
+
+
+.button-group {
+    button, .button {
+        margin-right: 1rem;
+    }
+
+    &.float-right {
+        button, .button {
+            margin-right: 0;
+            margin-left: 1rem;
+        }
     }
 }

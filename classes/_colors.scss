@@ -2,3 +2,7 @@
     .color-#{$color} { color: $value; }
     .background-#{$color} { background-color: $value; }
 }
+
+.error {
+    color: color('error');
+}

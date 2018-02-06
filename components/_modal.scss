@@ -1,0 +1,32 @@
+.modal-overlay {
+    @extend .cover;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(color('black'), 0.8);
+    opacity: 0;
+    transition: all 500ms;
+
+    &.open {
+        opacity: 1;
+    }
+    &.close {
+        opacity: 0;
+    }
+
+
+    .modal {
+        background-color: color('white');
+        @extend .rounded;
+        @extend .center;
+        transform: translate(-50%, -75%);
+        padding: size('super');
+        transition: all 500ms;
+
+        &.open {
+            transform: translate(-50%, -50%);
+        }
+        &.close {
+            transform: translate(-50%, -75%);
+        }
+    }
+}

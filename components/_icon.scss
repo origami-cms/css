@@ -19,5 +19,8 @@ $multiplier: 2;
         &.#{$color} use {
             fill: $val;
         }
+        &.#{$color} path {
+            stroke: $val;
+        }
     }
 }

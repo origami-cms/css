@@ -1,0 +1,5 @@
+@each $name, $grad in $gradients {
+    .gradient-#{$name} {
+        background: gradient($name);
+    }
+}

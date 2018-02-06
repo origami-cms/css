@@ -1,22 +1,23 @@
 $main: #693a91;
 $colors: (
     main: $main,
-    'main-softest': rgba($main, 0.025),
-    alt: #23a8e6,
-    accent: #f8aa12,
-    error: #f0543e,
+    'main-softest': #f8f8ff,
+    alt: #ff791f,
+    accent: #23a8e6,
+    error: #ff5554,
     accent-dark: #d4900c,
     success: #28c787,
     'white': #ffffff,
+    'black': #3e3e3e,
     'white-0': rgba(#ffffff, 0.1),
     'white-off': #f7f6f8,
 
-    'shade-0': rgba($main, 0.05),
+    'shade-0': #f8f8ff,
     'shade-1': rgba($main, 0.1),
     'shade-2': rgba($main, 0.3),
-    'shade-3': rgba($main, 0.5),
-    'shade-4': rgba($main, 0.7),
-    'shade-5': rgba($main, 1),
+    'shade-3': #d0c6db,
+    'shade-4': #b5aabf,
+    'shade-5': $main,
 
     );
 
@@ -35,8 +36,15 @@ $gradient-main: linear-gradient(135deg, #9c4ba4, $main);
 
 
 $colors: map-merge($colors, (
-    'text': $main,
+    'text': color('shade-4'),
     'text-dark': #734b86,
     'bg': color('white')
 ));
 
+
+
+@each $color in "shade-1" {
+    %shadow-#{$color} {
+        box-shadow: 0 1rem 2rem color($color);
+    }
+}
