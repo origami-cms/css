@@ -1,5 +1,5 @@
 table {
-    border-radius: $default-border-radius;
+    border-radius: var(--table-border-radius);
     // overflow-y: hidden;
     width: calc(100% + 4rem);
     table-layout: fixed;
@@ -9,12 +9,15 @@ table {
     margin-left: -2rem;
     margin-right: -2rem;
 
+    thead tr {
+        height: var(--table-header-height, var(--table-row-height));
+    }
+
     tr {
         margin-bottom: 2rem;
-        height: 4rem;
-        line-height: 4rem;
+        height: var(--table-row-height);
+        line-height: var(--table-row-height);
         @extend .rounded;
-        @extend .shadow-shade-1;
 
         td {
             border-style: solid none;
@@ -22,49 +25,58 @@ table {
 
         td:first-child {
             border-left-style: solid;
-            border-top-left-radius: $default-border-radius;
-            border-bottom-left-radius: $default-border-radius;
+            border-top-left-radius: var(--table-border-radius);
+            border-bottom-left-radius: var(--table-border-radius);
         }
 
         td:last-child {
             border-right-style: solid;
-            border-bottom-right-radius: $default-border-radius;
-            border-top-right-radius: $default-border-radius;
+            border-bottom-right-radius: var(--table-border-radius);
+            border-top-right-radius: var(--table-border-radius);
         }
 
         th {
             text-transform: uppercase;
-            color: color('shade-2');
+            color: var(--color-grey-300);
             font-weight: bold;
             letter-spacing: 1px;
-            height: 4rem;
-            line-height: 4rem;
+            height: var(--table-header-height, var(--table-row-height));
+            line-height: var(--table-header-height, var(--table-row-height));
             text-align: left;
-            font-size: fs('small');
+            font-size: var(--font-size-small);
         }
 
         th, td {
-            padding: 0 4rem;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            padding: 0 var(--table-cell-padding);
         }
 
         td {
-            background-color: color('white');
-            height: 4rem;
-            line-height: 4rem;
+            background-color: var(--color-white);
+            height: var(--table-row-height);
+            line-height: var(--table-row-height);
+
+            &.action {
+                overflow: visible;
+            }
+
+            p {
+                line-height: 2;
+            }
         }
+
         th.icon, td.icon {
-            padding: 0 size('small');
-            width: size('main');
+            padding: 0 var(--size-small);
+            width: var(--size-main);
             text-align: center;
         }
     }
 
     &.selectable tr:hover:not(.row-header), tr.selected {
         &, td {
-            background-color: color('shade-0');
+            background-color: var(--color-grey-100);
             cursor: pointer;
         }
     }
@@ -72,5 +84,9 @@ table {
     &.rows-split {
         border-collapse: separate;
         border-spacing: 0 0.5rem;
+    }
+
+    &.short-header {
+        padding-top: 0;
     }
 }

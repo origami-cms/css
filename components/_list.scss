@@ -1,12 +1,12 @@
 .list {
     li {
-        border-bottom: $border-soft-extra;
+        border-bottom: var(--border-100);
     }
 
     &.selectable li {
         cursor: pointer;
         &:hover {
-            background-color: color('shade-0');
+            background-color: var(--color-grey-100);
         }
     }
 

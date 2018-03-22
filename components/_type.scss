@@ -1,34 +1,43 @@
-// @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700|Work+Sans:300,400,600");
-
-@each $size, $value in $fs {
-    .font-#{$size} { font-size: $value; }
-}
-
+.font-base { font-size: var(--font-size-base); }
+.font-tiny { font-size: var(--font-size-tiny); }
+.font-small { font-size: var(--font-size-small); }
+.font-main { font-size: var(--font-size-main); }
+.font-large { font-size: var(--font-size-large); }
+.font-huge { font-size: var(--font-size-huge); }
+.font-super { font-size: var(--font-size-super); }
+.font-hero { font-size: var(--font-size-hero); }
 
 // -------------------------------------------------------------------- Headings
-h1 {
-    font-size: fs('hero');
-    color: color('main');
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.4rem;
-    color: color('alt');
+@for $i from 1 to 6 {
+    h#{$i} {
+        font-size: var(--h#{$i}-font-size);
+        font-weight: var(--h#{$i}-font-weight, 400);
+        color: var(--h#{$i}-color, var(--color-text));
+    }
 }
 
 
 // ----------------------------------------------------------------------- Links
 a {
     text-decoration: none;
-    color: color('alt');
+    color: var(--color-main);
 }
 
 // ------------------------------------------------------------------------ Misc
 small {
-    font-size: fs('small');
+    font-size: var(--fs-small);
 }
 strong {
     font-weight: 700;
     letter-spacing: 1px;
+}
+.error {
+    color: var(--color-error);
+}
+
+
+// ----------------------------------------------------------------------- Rules
+h2,
+h3 {
+    margin-bottom: var(--size-small);
 }

@@ -1,0 +1,32 @@
+.menu {
+    position: absolute;
+    background-color: var(--menu-bg);
+    z-index: 99;
+    right: 0;
+    top: 100%;
+    box-shadow: var(--shadow-100);
+    border: var(--border-100);
+
+    li {
+        display: block;
+
+        white-space: nowrap;
+        background-color: var(--menu-bg);
+        border-bottom: var(--border-100);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-hover);
+        }
+
+        & > * {
+            display: block;
+            text-align: left;
+            height: var(--menu-item-height);
+            line-height: var(--menu-item-height);
+            padding: 0 var(--menu-padding);
+            font-weight: 400;
+            text-transform: none;
+        }
+    }
+}

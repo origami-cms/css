@@ -1,15 +1,14 @@
-$border: 1px solid color('white-0');
 .tabs {
     height: 4rem;
     line-height: 4rem;
-    border-bottom: $border;
+    border-bottom: var(--border-100);
     user-select: none;
 
     .tab {
         cursor: pointer;
         display: inline-block;
-        border-right: $border;
-        padding: 0 size('small');
+        border-right: var(--border-100);
+        padding: 0 var(--size-small);
 
         &.icon-only {
             padding: 0;
@@ -18,7 +17,7 @@ $border: 1px solid color('white-0');
         }
 
         &:hover {
-            background-color: color('shade-0');
+            background-color: var(--color-grey-100);
         }
     }
 

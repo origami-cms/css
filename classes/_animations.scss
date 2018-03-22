@@ -1,0 +1,23 @@
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-slide-up {
+    from {
+        margin-top: var(--size-large);
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.ani-fade-slide-up {
+    animation-name: fade-slide-up;
+}

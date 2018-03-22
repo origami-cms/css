@@ -1,21 +1,29 @@
 button, .button, input[type='submit'] {
+    display: inline-block;
+    width: auto;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     border: none;
-    height: $button-height;
-    line-height: $button-height;
-    padding: $button-padding;
-    border-radius: $button-border-radius;
-    color: color('white');
-    transition: all $transition-time;
+    height: var(--btn-height);
+    line-height: var(--btn-height);
+    padding: 0 var(--btn-padding);
+    border-radius: var(--btn-border-radius);
+    color: var(--color-white);
+    transition: all var(--transition-time);
     user-select: none;
-    background: gradient('main');
+    background: var(--color-main);
+    font-family: var(--font-family);
     cursor: pointer;
+    font-size: calc((1.6/4) * var(--size-main));
+    text-align: center;
 
 
     &.hollow {
         background: transparent;
+        color: var(--color-main);
+        padding-left: 0;
+        padding-right: 0;
     }
 
 
@@ -35,13 +43,13 @@ button, .button, input[type='submit'] {
     }
 
     &.has-icon {
-        padding-left: size('small');
+        padding-left: var(--size-small);
         .i {
             vertical-align: top;
-            margin-right: size('small');
+            margin-right: var(--size-small);
         }
         .loader {
-            margin-top: size('small') / 2 ;
+            margin-top: calc(var(--size-small) / 2);
         }
     }
 
@@ -57,21 +65,33 @@ button, .button, input[type='submit'] {
         pointer-events: none
     }
 
-    @each $name, $size in $sizes {
-        $multipier: 0.8;
-        $_size: $size * $multipier;
-        &.size-#{$name} {
-            height: $_size;
-            width: auto;
-            line-height: $_size;
-            font-size: (1.8/4) * $_size;
-            padding: 0 $_size / 2;
+    & > span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &.icon-right {
+        position: relative;
+        // display: block;
+        .i:last-of-type {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 
-    @each $name, $grad in $gradients {
-        &.#{$name} {
-            background: gradient($name);
+    @each $size in $sizes {
+        &.size-#{$size} {
+            width: auto;
+            height: var(--size-#{$size});
+            line-height: var(--size-#{$size});
+            font-size: calc((1.6/4) * var(--size-#{$size}));
+            padding: 0 calc(var(--size-#{$size}) / 2);
+
+            &.icon-right {
+                padding-right: var(--size-#{$size});
+            }
         }
     }
 }

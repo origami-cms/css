@@ -1,0 +1,113 @@
+// NOTE: Great explanation of flex here.
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+//---------------------------------------------------------------- Grid settings
+$cols-max: 24;
+$item-margin: var(--grid-item-padding);
+
+//----------------------------------------------------------------- Grid classes
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    padding: $item-margin;
+
+    *[class*='cell-'] {
+        margin: $item-margin;
+    }
+    &.no-padding {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        width: 100%;
+        *[class*='cell-'] {
+            margin: 0;
+
+        }
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+
+
+    //---------------------------------------------------------------- Alignment
+    // Horizontal
+    &.g-halign-left     { justify-content: flex-start; }
+    &.g-halign-right    { justify-content: flex-end; }
+    &.g-halign-center   { justify-content: center; }
+    &.g-halign-spaced   { justify-content: space-between; }
+    // Cells alignment
+    &.g-calign-top      { align-items: flex-start; }
+    &.g-calign-bottom   { align-items: flex-end; }
+    &.g-calign-center   { align-items: center; }
+    &.g-calign-stretch  { align-items: stretch; }
+    &.g-calign-baseline { align-items: baseline; }
+    // Vertical
+    &.g-valign-top     { align-content: flex-start; }
+    &.g-valign-bottom  { align-content: flex-end; }
+    &.g-valign-center  { align-content: center; }
+    &.g-valign-stretch { align-content: stretch; }
+    &.g-valign-spaced  { align-content: space-between; }
+
+
+
+}
+
+//------------------------------------------------------------ Responsive widths
+$responsive-sizes: (
+    'tn': $mq-tiny-up,
+    'sm': $mq-small-up,
+    'md': $mq-medium-up,
+    'lg': $mq-large-up,
+    'hg': $mq-huge-up,
+    'ms': $mq-massive-up
+);
+
+
+@each $name, $size in $responsive-sizes {
+    @media #{$size} {
+        .grid {
+            & > *[class*='cell-'] {
+                &[class*='cell-#{$name}-'] {
+                    @for $i from 1 through $cols-max {
+                        &.cell-#{$name}-#{$i} {
+                            flex: $i;
+                            $width: percentage($i/$cols-max);
+                            flex-basis: calc(#{$width} - (2*#{$item-margin}));
+                            max-width: calc(#{$width} - (2*#{$item-margin}));
+                        }
+                    }
+                }
+            }
+            &.no-padding {
+                & > *[class*='cell-'] {
+                    &[class*='cell-#{$name}-'] {
+                        @for $i from 1 through $cols-max {
+                            &.cell-#{$name}-#{$i} {
+                                $width: percentage($i/$cols-max);
+                                flex-basis: #{$width};
+                                max-width: #{$width};
+                            }
+                        }
+                    }
+                }
+
+            }
+            &.column {
+                & > *[class*='cell-'] {
+                    &[class*='cell-#{$name}-'] {
+                        @for $i from 1 through $cols-max {
+                            &.cell-#{$name}-#{$i} {
+                                max-width: none;
+                                $height: percentage($i/$cols-max);
+                                max-height: calc(#{$height} - (2*#{$item-margin}));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,174 @@
-@import "./variables/import";
+$sizes: (
+    'tiny',
+    'small',
+    'medium',
+    'main',
+    'large',
+    'huge',
+    'super',
+    'hero'
+);
+
+$colors: (
+    'main',
+    'alt',
+    'text',
+    'white',
+    'grey-50',
+    'grey-100',
+    'grey-200',
+    'grey-300',
+    'grey-400',
+    'grey-500',
+    'grey-600',
+    'grey-700',
+    'grey-800',
+    'grey-900',
+    'black',
+    'error'
+);
+
+:root {
+    // =========================================================================
+    // ================================================================== COLORS
+    // =========================================================================
+    // ------------------------------------------------------------ COLORS: Main
+    --color-main: #e31d20;
+    --color-alt: var(--color-black);
+    --color-text: var(--color-grey-900);
+    --color-error: var(--color-main);
+    --color-bg: var(--color-grey-100);
+    --color-hover: var(--color-grey-50);
+
+    // ----------------------------------------------------------- COLORS: Greys
+    --color-white: white;
+    --color-grey-50: #f8f8f8;
+    --color-grey-100: #f5f5f5;
+    --color-grey-200: #eee;
+    --color-grey-300: #c9c9c9;
+    --color-grey-400: #bbb;
+    --color-grey-500: #999999;
+    --color-grey-600: #777777;
+    --color-grey-700: #555;
+    --color-grey-800: #333;
+    --color-grey-900: #22262c;
+    --color-black: #181c22;
+
+
+
+    // =========================================================================
+    // =================================================================== FONTS
+    // =========================================================================
+    // --------------------------------------------------------- FONTS: Families
+    --font-family: 'Roboto', sans-serif;
+    --font-family-headings: 'Merriweather', serif;
+
+    // ------------------------------------------------------------ FONTS: Sizes
+    --font-size-base: 10px;
+    --font-size-tiny: 1.2rem;
+    --font-size-small: 1.4rem;
+    --font-size-main: 1.6rem;
+    --font-size-large: 2.4rem;
+    --font-size-huge: 3.6rem;
+    --font-size-super: 4.8rem;
+    --font-size-hero: 6.4rem;
+
+    // --------------------------------------------------------- FONTS: Headings
+    --h1-font-size: var(--font-size-super);
+    --h2-font-size: var(--font-size-huge);
+    --h3-font-size: var(--font-size-large);
+    --h4-font-size: var(--font-size-main);
+    --h5-font-size: var(--font-size-main);
+    --h6-font-size: var(--font-size-main);
+
+
+
+    // =========================================================================
+    // =================================================================== SIZES
+    // =========================================================================
+    // ----------------------------------------------------------- SIZES: Layout
+    --size-tiny: 1rem;
+    --size-small: 2rem;
+    --size-medium: 3rem;
+    --size-main: 4rem;
+    --size-large: 6rem;
+    --size-huge: 8rem;
+    --size-super: 12rem;
+    --size-hero: 24rem;
+
+
+
+    // =========================================================================
+    // ================================================================= STYLING
+    // =========================================================================
+    // -------------------------------------------------------- STYLING: Shadows
+    --shadow-100: 0 var(--size-tiny) var(--size-tiny) var(--color-grey-100);
+
+    // -------------------------------------------------------- STYLING: Borders
+    --border-radius: 0.4rem;
+    --border-100: 1px solid var(--color-grey-100);
+    --border-200: 2px solid var(--color-grey-200);
+    --border-main: 2px solid var(--color-main);
+
+    // -------------------------------------------------------- STYLING: General
+    --padding: var(--size-main);
+
+
+
+    // =========================================================================
+    // ============================================================== COMPONENTS
+    // =========================================================================
+    // -------------------------------------------------------- COMPONENTS: GRID
+    --grid-item-padding: 1rem;
+
+    // ------------------------------------------------------ COMPONENTS: Button
+    --btn-bg:  var(--color-main);
+    --btn-border-radius: var(--border-radius);
+    --btn-font-weight: 600;
+    --btn-height: var(--size-large);
+    --btn-padding: var(--size-small);
+
+    // -------------------------------------------------------- COMPONENTS: Form
+    --form-bg:  var(--color-white);
+    --input-bg: transparent;
+    --input-height: var(--size-large);
+    --input-height-small: var(--size-main);
+    --input-padding: var(--size-small);
+    --input-border: var(--border-200);
+    --input-border-focus:  var(--border-main);
+    --input-border-radius: var(--border-radius);
+    --input-font-size: var(--font-size-main);
+
+    // ------------------------------------------------------- COMPONENTS: Table
+    --table-header-height: var(--size-medium);
+    --table-row-height: var(--size-large);
+    --table-cell-padding: var(--size-tiny);
+    --table-border-radius: var(--border-radius);
+
+
+    // ------------------------------------------------------- COMPONENTS: Modal
+    --modal-overlay: rgba(black, 0.8);
+
+    // -------------------------------------------------------- COMPONENTS: Card
+    --card-bg:  var(--color-white);
+    --card-border-radius: var(--border-radius);
+    --card-padding: var(--size-main);
+
+    // --------------------------------------------------------- COMPONENTS: Nav
+    --nav-bg:  var(--color-white);
+    --nav-height:  var(--size-large);
+    --nav-padding: 0;
+    --nav-logo-width: 6.6rem;
+
+    // -------------------------------------------------------- COMPONENTS: Menu
+    --menu-bg:  var(--color-white);
+    --menu-item-height:  var(--size-main);
+    --menu-padding:  var(--size-small);
+
+
+    // =========================================================================
+    // ==================================================================== MISC
+    // =========================================================================
+    --line-height: 1.5;
+    --transition-time: 0.35s;
+}

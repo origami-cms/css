@@ -1,8 +1,4 @@
-@each $color, $value in $colors {
-    .color-#{$color} { color: $value; }
-    .background-#{$color} { background-color: $value; }
-}
-
-.error {
-    color: color('error');
+@each $color in $colors {
+    .color-#{$color} { color: var(--color-#{$color}); }
+    .background-#{$color} { background-color: var(--color-#{$color}); }
 }

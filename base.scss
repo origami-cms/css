@@ -1,15 +1,4 @@
-@import "import";
+@import "variables";
 @import "lib/import";
-@import "classes/import";
 @import "components/import";
-
-html {
-    font-size: 10px;
-    font-family: 'Work Sans', sans-serif;
-    color: color('main');
-}
-
-body, * {
-    font-size: 1.5rem;
-    line-height: 1.6;
-}
+@import "classes/import";

@@ -5,6 +5,9 @@
 .display-b {
     display: block;
 }
+.display-f {
+    display: flex;
+}
 // -------------------------------------------------------------------- Position
 .position-r {
     position: relative;
@@ -14,6 +17,9 @@
 }
 
 // ------------------------------------------------------------------- Centering
+.center-margin {
+    margin: auto;
+}
 .center {
     position: absolute;
     left: 50%;

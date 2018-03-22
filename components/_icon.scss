@@ -1,26 +1,30 @@
-$multiplier: 2;
 .i {
+    --multiplier: 1;
     display: inline-block;
-    width: size('main') * $multiplier;
-    height: size('main') * $multiplier;
+    width: calc(var(--size-main) * var(--multiplier));
+    height: calc(var(--size-main) * var(--multiplier));
     vertical-align: middle;
     & use {
-        fill: color('main');
+        fill: var(--color-main);
     }
 
-    @each $size, $val in $sizes {
+    @each $size in $sizes {
         &.#{$size} {
-            width: $val * $multiplier;
-            height: $val * $multiplier;
+            width: calc(var(--size-#{$size}) * var(--multiplier));
+            height: calc(var(--size-#{$size}) * var(--multiplier));
         }
     }
 
-    @each $color, $val in $colors {
+    @each $color in $colors {
         &.#{$color} use {
-            fill: $val;
+            fill: var(--color-#{$color});
         }
         &.#{$color} path {
-            stroke: $val;
+            stroke: var(--color-#{$color});
         }
+    }
+
+    & + span {
+        vertical-align: middle;
     }
 }
