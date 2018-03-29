@@ -1,0 +1,201 @@
+$sizes: (
+    'tiny',
+    'small',
+    'medium',
+    'main',
+    'large',
+    'huge',
+    'super',
+    'hero'
+);
+
+$colors: (
+    'main',
+    'alt',
+    'text',
+    'white',
+    'grey-50',
+    'grey-100',
+    'grey-200',
+    'grey-300',
+    'grey-400',
+    'grey-500',
+    'grey-600',
+    'grey-700',
+    'grey-800',
+    'grey-900',
+    'black',
+    'error'
+);
+
+
+@function default($key) {
+    $val: map-get($defaults, $key);
+    @return var(--#{$key}, $val);
+}
+
+
+$defaults: (
+    // =========================================================================
+    // ================================================================== COLORS
+    // =========================================================================
+    // ------------------------------------------------------------ COLORS: Main
+    'color-main': #e31d20,
+
+    // ----------------------------------------------------------- COLORS: Greys
+    'color-white':  white,
+    'color-grey-50': #f8f8f8,
+    'color-grey-100': #f5f5f5,
+    'color-grey-200': #eee,
+    'color-grey-300': #c9c9c9,
+    'color-grey-400': #bbb,
+    'color-grey-500': #999999,
+    'color-grey-600': #777777,
+    'color-grey-700': #555,
+    'color-grey-800': #333,
+    'color-grey-900': #22262c,
+    'color-black': #181c22,
+
+
+    // =========================================================================
+    // =================================================================== FONTS
+    // =========================================================================
+    // --------------------------------------------------------- FONTS: Families
+    'font-family': ('Roboto', sans-serif),
+    'font-family-headings': ('Merriweather', serif),
+
+    // ------------------------------------------------------------ FONTS: Sizes
+    'font-size-base': 10px,
+    'font-size-tiny': 1.2rem,
+    'font-size-small': 1.4rem,
+    'font-size-main': 1.6rem,
+    'font-size-large': 2.4rem,
+    'font-size-huge': 3.6rem,
+    'font-size-super': 4.8rem,
+    'font-size-hero': 6.4rem,
+
+
+    // =========================================================================
+    // =================================================================== SIZES
+    // =========================================================================
+    // ----------------------------------------------------------- SIZES: Layout
+    'size-tiny': 1rem,
+    'size-small': 2rem,
+    'size-medium': 3rem,
+    'size-main': 4rem,
+    'size-large': 6rem,
+    'size-huge': 8rem,
+    'size-super': 12rem,
+    'size-hero': 24rem,
+
+    // =========================================================================
+    // ================================================================= STYLING
+    // =========================================================================
+    // -------------------------------------------------------- STYLING: Borders
+    'border-radius': 0.4rem,
+
+    // =========================================================================
+    // ==================================================================== MISC
+    // =========================================================================
+    'line-height': 1.5,
+    'transition-time': 0.35s
+);
+
+
+
+
+
+
+
+$defaults: map-merge($defaults, (
+    // =========================================================================
+    // ================================================================== COLORS
+    // =========================================================================
+    // --------------------------------------------------------- COLORS: Aliases
+    'color-alt': default('color-black'),
+    'color-text': default('color-grey-900'),
+    'color-error': default('color-main'),
+    'color-bg': default('color-grey-100'),
+    'color-hover': default('color-grey-50'),
+
+
+    // =========================================================================
+    // =================================================================== FONTS
+    // =========================================================================
+    // --------------------------------------------------------- FONTS: Headings
+    'h1-font-size': default('font-size-super'),
+    'h2-font-size': default('font-size-huge'),
+    'h3-font-size': default('font-size-large'),
+    'h4-font-size': default('font-size-main'),
+    'h5-font-size': default('font-size-main'),
+    'h6-font-size': default('font-size-main'),
+
+
+    // =========================================================================
+    // ================================================================= STYLING
+    // =========================================================================
+    // -------------------------------------------------------- STYLING: General
+    'padding': default('size-main'),
+
+    // -------------------------------------------------------- STYLING: Shadows
+    'shadow-100': 0 default('size-tiny') default('size-tiny') default('color-grey-100'),
+
+    // -------------------------------------------------------- STYLING: Borders
+    'border-100': 1px solid default('color-grey-100'),
+    'border-200': 2px solid default('color-grey-200'),
+    'border-main': 2px solid default('color-main'),
+
+
+    // =========================================================================
+    // ============================================================== COMPONENTS
+    // =========================================================================
+    // -------------------------------------------------------- COMPONENTS: GRID
+    'grid-item-padding': 1rem,
+
+    // ------------------------------------------------------ COMPONENTS: Button
+    'btn-bg': default('color-main'),
+    'btn-border-radius': default('border-radius'),
+    'btn-font-weight': 600,
+    'btn-height': default('size-large'),
+    'btn-padding': default('size-small'),
+
+    // -------------------------------------------------------- COMPONENTS: Form
+    'form-bg': default('color-white'),
+    'input-bg': transparent,
+    'input-height': default('size-large'),
+    'input-height-small': default('size-main'),
+    'input-padding': default('size-small'),
+    'input-border': default('border-200'),
+    'input-border-focus':  default('border-main'),
+    'input-border-radius': default('border-radius'),
+    'input-font-size': default('font-size-main'),
+
+    // ------------------------------------------------------- COMPONENTS: Table
+    'table-header-height': default('size-medium'),
+    'table-row-height': default('size-large'),
+    'table-cell-padding': default('size-tiny'),
+    'table-border-radius': default('border-radius'),
+
+
+    // ------------------------------------------------------- COMPONENTS: Modal
+    'modal-overlay': rgba(black, 0.8),
+
+    // -------------------------------------------------------- COMPONENTS: Card
+    'card-bg':  default('color-white'),
+    'card-border-radius': default('border-radius'),
+    'card-padding': default('size-main'),
+
+    // --------------------------------------------------------- COMPONENTS: Nav
+    'nav-bg':  default('color-white'),
+    'nav-height':  default('size-large'),
+    'nav-padding': 0,
+    'nav-logo-width': 6.6rem,
+
+    // -------------------------------------------------------- COMPONENTS: Menu
+    'menu-bg':  default('color-white'),
+    'menu-item-height':  default('size-main'),
+    'menu-padding':  default('size-small')
+));
+
+
+
