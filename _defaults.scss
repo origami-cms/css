@@ -114,7 +114,7 @@ $defaults: map-merge($defaults, (
     // --------------------------------------------------------- COLORS: Aliases
     'color-alt': default('color-black'),
     'color-text': default('color-grey-900'),
-    'color-error': default('color-main'),
+    'color-error': default('color-black'),
     'color-bg': default('color-grey-100'),
     'color-hover': default('color-grey-50'),
 

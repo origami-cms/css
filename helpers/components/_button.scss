@@ -74,7 +74,7 @@
     &.icon-right {
         position: relative;
         // display: block;
-        .i:last-of-type {
+        .i:last-of-type, zen-ui-button:last-of-type {
             position: absolute;
             right: 0;
             top: 50%;

@@ -1,0 +1,54 @@
+%comp-form {
+    &, * {
+        @extend %reset;
+    }
+    input, select, textarea, input[type="file"] + span.input {
+        @extend %comp-form-input-general;
+    }
+
+    textarea {
+        @extend %comp-form-input-textarea;
+    }
+
+    select {
+        @extend %comp-form-input-select;
+    }
+
+
+    .form-row {
+        @extend %comp-form-row;
+    }
+
+
+    &.full-field-width {
+        width: 100%;
+        .form-group, input, button, select, textarea {
+            width: 100%;
+        }
+    }
+
+
+    fieldset {
+        legend {
+            font-size: var(--fs-large);
+            color: var(--color-alt);
+            padding-top: var(--size-small);
+            width: 100%;
+        }
+
+        & + fieldset {
+            margin-top: var(--size-hero);
+            legend {
+                padding-top: var(--size-hero);
+                border-top: var(--border-100);
+            }
+        }
+    }
+
+
+    &.input-small {
+        input, select, textarea {
+            height: var(--input-height-small);
+        }
+    }
+}
