@@ -2,3 +2,7 @@
     .color-#{$color} { color: var(--color-#{$color}); }
     .background-#{$color} { background-color: var(--color-#{$color}); }
 }
+
+.error {
+    color: var(--color-error);
+}

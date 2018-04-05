@@ -89,28 +89,31 @@
     & > zen-ui-icon {
         position: absolute;
         margin: 1rem;
-        & + input {
+        & + input, & + * + input {
             padding-left: var(--input-height);
         }
     }
 
-    label, span:first-child {
-        display: inline-block;
-        margin-bottom: var(--size-tiny);
-        font-size: var(--font-size-small);
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: var(--color-grey-400);
+    span.error {
+        color: var(--color-error);
     }
+    // label, span:first-child:not(.error) {
+    //     display: inline-block;
+    //     margin-bottom: var(--size-tiny);
+    //     font-size: var(--font-size-small);
+    //     text-transform: uppercase;
+    //     font-weight: 700;
+    //     letter-spacing: 2px;
+    //     color: var(--color-grey-400);
+    // }
 
-    & > span:first-child {
-        display: block;
-        margin-top: var(--size-large);
-        text-transform: uppercase;
-        font-weight: bold;
-        line-height: var(--size-small);
-    }
+    // & > span:first-child:not(.error) {
+    //     display: block;
+    //     margin-top: var(--size-large);
+    //     text-transform: uppercase;
+    //     font-weight: bold;
+    //     line-height: var(--size-small);
+    // }
 
     button {
         flex-basis: var(--btn-height);

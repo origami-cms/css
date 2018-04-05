@@ -20,11 +20,15 @@
     text-align: center;
 
 
-    &.hollow {
+    &.hollow, &[hollow] {
         background: transparent;
         color: default('color-main');
         padding-left: 0;
         padding-right: 0;
+
+    }
+    & + & {
+        margin-left: var(--size-small);
     }
 
 
@@ -74,7 +78,7 @@
     &.icon-right {
         position: relative;
         // display: block;
-        .i:last-of-type, zen-ui-button:last-of-type {
+        .i:last-of-type, zen-ui-icon:last-of-type {
             position: absolute;
             right: 0;
             top: 50%;
@@ -87,12 +91,32 @@
             width: auto;
             height: default('size-#{$size}');
             line-height: default('size-#{$size}');
-            font-size: calc((1.6/4) * default('size-#{$size}'));
-            padding: 0 calc(default('size-#{$size}') / 2);
+            font-size: calc((1.6/4) * #{default('size-#{$size}')});
+            padding: 0 calc(#{default('size-#{$size}')} / 2);
 
             &.icon-right {
                 padding-right: default('size-#{$size}');
             }
+        }
+    }
+
+    @each $color in $colors {
+        &[color=#{$color}] {
+            color: default('color-#{$color}');
+        }
+    }
+}
+
+
+%comp-button-group {
+    button, .button, zen-ui-button {
+        margin-right: 1rem;
+    }
+
+    &.float-right {
+        button, .button {
+            margin-right: 0;
+            margin-left: 1rem;
         }
     }
 }

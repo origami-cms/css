@@ -5,3 +5,6 @@
 .align-middle { vertical-align: middle; }
 .align-top { vertical-align: top; }
 .align-bottom { vertical-align: bottom; }
+.empty-hide:empty {
+    display: none;
+}

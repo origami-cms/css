@@ -4,14 +4,5 @@ zen-ui-button, button, .button, input[type='submit'] {
 
 
 .button-group {
-    button, .button, zen-ui-button {
-        margin-right: 1rem;
-    }
-
-    &.float-right {
-        button, .button {
-            margin-right: 0;
-            margin-left: 1rem;
-        }
-    }
+    @extend %comp-button-group;
 }

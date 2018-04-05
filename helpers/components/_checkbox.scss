@@ -21,4 +21,8 @@
         border-radius: var(--input-border-radius);
         vertical-align: middle;
     }
+
+    & + span {
+        margin-left: var(--size-small);
+    }
 }

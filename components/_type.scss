@@ -18,8 +18,9 @@
 
 
 // ----------------------------------------------------------------------- Links
-a {
+a, wc-link {
     text-decoration: none;
+    cursor: pointer;
     color: var(--color-main);
 }
 
