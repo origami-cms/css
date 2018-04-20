@@ -3,18 +3,6 @@
   @return map-merge($map, $new);
 }
 
-@function size($size) {
-    @return map-get($sizes, $size);
-}
-
-@function color($color) {
-    @return map-get($colors, $color);
-}
-
-@function fs($size) {
-    @return map-get($fs, $size);
-}
-
 @function gradient($name) {
     $grad: map-get($gradients, $name);
     @return linear-gradient(to bottom right, nth($grad, 1), nth($grad, 2));

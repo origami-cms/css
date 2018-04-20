@@ -40,30 +40,32 @@ $defaults: (
     // ================================================================== COLORS
     // =========================================================================
     // ------------------------------------------------------------ COLORS: Main
-    'color-main': #e31d20,
-    'color-main-faint': rgba(#e31d20, 0.07),
-    'color-main-opaque': rgba(#e31d20, 0.5),
+    'color-purple': #693a91,
+    'color-orange': #ff791f,
+    'color-blue': #23a8e6,
+    'color-red': #ff5554,
+    'color-green': #28c787,
 
     // ----------------------------------------------------------- COLORS: Greys
     'color-white':  white,
-    'color-grey-50': #f8f8f8,
+    'color-grey-50': #f8f8ff,
     'color-grey-100': #f5f5f5,
-    'color-grey-200': #eee,
-    'color-grey-300': #c9c9c9,
+    'color-grey-200': #eae3f0,
+    'color-grey-300': #bda9cf,
     'color-grey-400': #bbb,
     'color-grey-500': #999999,
     'color-grey-600': #777777,
-    'color-grey-700': #555,
-    'color-grey-800': #333,
-    'color-grey-900': #22262c,
-    'color-black': #181c22,
+    'color-grey-700': #666,
+    'color-grey-800': #555,
+    'color-grey-900': #443750,
+    'color-black': #3e3e3e,
 
 
     // =========================================================================
     // =================================================================== FONTS
     // =========================================================================
     // --------------------------------------------------------- FONTS: Families
-    'font-family': ('Roboto', sans-serif),
+    'font-family': ('Work Sans', sans-serif),
     'font-family-headings': ('Merriweather', serif),
 
     // ------------------------------------------------------------ FONTS: Sizes
@@ -114,10 +116,14 @@ $defaults: map-merge($defaults, (
     // ================================================================== COLORS
     // =========================================================================
     // --------------------------------------------------------- COLORS: Aliases
-    'color-alt': #3DB0B3,
+    'color-main': default('color-purple'),
+    'color-main-soft': rgba(#693a91, 0.1),
+    'color-error': default('color-red'),
+    'color-success': default('color-green'),
+
+    'color-main-softest': #f8f8ff,
     'color-text': default('color-grey-900'),
-    'color-error': default('color-black'),
-    'color-bg': default('color-grey-100'),
+    'color-bg': #f8f8ff,
     'color-hover': default('color-grey-50'),
 
 
@@ -126,11 +132,23 @@ $defaults: map-merge($defaults, (
     // =========================================================================
     // --------------------------------------------------------- FONTS: Headings
     'h1-font-size': default('font-size-super'),
+    'h1-color': default('color-main'),
+
     'h2-font-size': default('font-size-huge'),
+    'h2-color': default('color-main'),
+
     'h3-font-size': default('font-size-large'),
+    'h3-color': default('color-main'),
+
     'h4-font-size': default('font-size-main'),
+    'h4-color': default('color-main'),
+
     'h5-font-size': default('font-size-main'),
+    'h5-color': default('color-main'),
+
     'h6-font-size': default('font-size-main'),
+    'h6-color': default('color-main'),
+
 
 
     // =========================================================================
@@ -140,6 +158,8 @@ $defaults: map-merge($defaults, (
     'padding': default('size-main'),
 
     // -------------------------------------------------------- STYLING: Shadows
+    'shadow-main': 0 default('size-tiny') default('size-main') default('color-main'),
+    'shadow-main-soft': 0 default('size-tiny') default('size-main') default('color-main-soft'),
     'shadow-100': 0 default('size-tiny') default('size-tiny') default('color-grey-100'),
 
     // -------------------------------------------------------- STYLING: Borders
@@ -156,10 +176,10 @@ $defaults: map-merge($defaults, (
     'grid-item-padding': 1rem,
 
     // ------------------------------------------------------ COMPONENTS: Button
-    'btn-bg': default('color-main'),
+    'btn-bg': linear-gradient(to right, #b155ba, var(--color-main)),
     'btn-border-radius': default('border-radius'),
     'btn-font-weight': 600,
-    'btn-height': default('size-large'),
+    'btn-height': default('size-main'),
     'btn-padding': default('size-small'),
 
     // -------------------------------------------------------- COMPONENTS: Form
@@ -197,7 +217,11 @@ $defaults: map-merge($defaults, (
     // -------------------------------------------------------- COMPONENTS: Menu
     'menu-bg':  default('color-white'),
     'menu-item-height':  default('size-main'),
-    'menu-padding':  default('size-small')
+    'menu-padding':  default('size-small'),
+
+    // ----------------------------------------------------- COMPONENTS: Loading
+    'loading-color':  default('color-white'),
+    'loading-size':  default('size-small')
 ));
 
 

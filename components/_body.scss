@@ -1,5 +1,9 @@
+
 html {
     font-size: var(--font-size-base);
+    // &, * {
+    //     @extend %reset;
+    // }
 }
 
 body {
@@ -7,4 +11,5 @@ body {
     background-color: var(--color-bg);
     font-family: var(--font-family);
     line-height: var(--line-height);
+    color: var(--color-text);
 }

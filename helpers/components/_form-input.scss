@@ -88,14 +88,25 @@
     & > .i,
     & > zen-ui-icon {
         position: absolute;
+        left: 0;
+        bottom: 0;
         margin: 1rem;
-        & + input, & + * + input {
-            padding-left: var(--input-height);
+
+        &:not(.hide) {
+            & + input, & + select, & + * + input, & + * + select {
+                padding-left: var(--input-height);
+            }
+        }
+
+        & + zen-ui-autocomplete {
+            --autocomplete-padding-left: var(--input-height);
         }
     }
 
     span.error {
         color: var(--color-error);
+        display: block;
+        * { vertical-align: middle; }
     }
     // label, span:first-child:not(.error) {
     //     display: inline-block;
@@ -127,5 +138,9 @@
         .i {
             opacity: 0.5;
         }
+    }
+
+    zen-ui-checkbox + span {
+        margin-left: var(--size-small);
     }
 }

@@ -17,7 +17,7 @@
     }
 
 
-    .form-row {
+    .form-row, zen-ui-form-row {
         @extend %comp-form-row;
     }
 
@@ -30,7 +30,7 @@
     }
 
 
-    input[type="submit"] {
+    input[type="submit"], zen-ui-button {
         @extend %comp-button;
         width: 100%;
     }
@@ -58,9 +58,5 @@
         input, select, textarea {
             height: var(--input-height-small);
         }
-    }
-
-    zen-ui-checkbox + span {
-        margin-left: var(--size-small);
     }
 }

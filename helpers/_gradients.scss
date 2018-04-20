@@ -1,9 +1,14 @@
+@function gradient($name) {
+    $grad: map-get($gradients, $name);
+    @return linear-gradient(to bottom right, nth($grad, 1), nth($grad, 2));
+}
+
 $gradients: (
     'main': (#b155ba, var(--color-main)),
     'orange': (#FF9B54, #C95A54),
     'red': (#FF5554, #C92954),
     'green': (#84D59A, #00BED0),
     'blue': (#008CBA, #6146C8),
-    'white': (color('main-softest'), #cacadf),
+    'white': (var(--color-main-soft), #cacadf),
     'gold': (#f1e35f, #da9124)
 );

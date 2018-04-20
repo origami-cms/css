@@ -18,14 +18,11 @@
     cursor: pointer;
     font-size: default('font-size-main');
     text-align: center;
+    white-space: nowrap;
 
 
-    &.hollow, &[hollow] {
-        background: transparent;
-        color: default('color-main');
-        padding-left: 0;
-        padding-right: 0;
-
+    &.hollow {
+        @extend %comp-button-hollow;
     }
     & + & {
         margin-left: var(--size-small);
@@ -91,18 +88,12 @@
             width: auto;
             height: default('size-#{$size}');
             line-height: default('size-#{$size}');
-            font-size: calc((1.6/4) * #{default('size-#{$size}')});
+            // font-size: calc((1.6/4) * #{default('size-#{$size}')});
             padding: 0 calc(#{default('size-#{$size}')} / 2);
 
             &.icon-right {
                 padding-right: default('size-#{$size}');
             }
-        }
-    }
-
-    @each $color in $colors {
-        &[color=#{$color}] {
-            color: default('color-#{$color}');
         }
     }
 }
@@ -119,4 +110,12 @@
             margin-left: 1rem;
         }
     }
+}
+
+
+%comp-button-hollow {
+    background: transparent;
+    color: default('color-main');
+    padding-left: 0;
+    padding-right: 0;
 }

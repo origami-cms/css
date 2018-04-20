@@ -1,5 +1,3 @@
 .card {
-    background: var(--card-bg);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
+    @extend %comp-card;
 }

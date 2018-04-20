@@ -2,4 +2,11 @@
     .gradient-#{$name} {
         background: gradient($name);
     }
+
+}
+
+:root {
+    @each $name, $grad in $gradients {
+        --gradient-#{$name}: #{gradient($name)};
+    }
 }
