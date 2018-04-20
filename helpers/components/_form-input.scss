@@ -84,6 +84,7 @@
     display: block;
     margin-bottom: var(--size-small);
     position: relative;
+    flex-basis: 100%;
 
     & > .i,
     & > zen-ui-icon {
@@ -107,6 +108,14 @@
         color: var(--color-error);
         display: block;
         * { vertical-align: middle; }
+    }
+
+    &.width-50, &[row-width=half] {
+        flex: 1;
+        margin-right: var(--size-small);
+        &:nth-of-type(2n) {
+            margin-right: 0;
+        }
     }
     // label, span:first-child:not(.error) {
     //     display: inline-block;

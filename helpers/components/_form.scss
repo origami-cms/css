@@ -1,5 +1,7 @@
 %comp-form {
     user-select: none;
+    display: flex;
+    flex-wrap: wrap;
 
     &, * {
         @extend %reset;

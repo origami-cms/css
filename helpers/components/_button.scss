@@ -12,8 +12,10 @@
     color: default('color-white');
     transition: all default('transition-time');
     user-select: none;
-    background-color: default('btn-bg');
-    background: default('btn-bg');
+    &:not([color]) {
+        background-color: default('btn-bg');
+        background: default('btn-bg');
+    }
     font-family: default('font-family');
     cursor: pointer;
     font-size: default('font-size-main');
