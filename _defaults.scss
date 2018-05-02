@@ -132,21 +132,27 @@ $defaults: map-merge($defaults, (
     // =========================================================================
     // --------------------------------------------------------- FONTS: Headings
     'h1-font-size': default('font-size-super'),
+    'h1-font-family': default('font-family-headings'),
     'h1-color': default('color-main'),
 
     'h2-font-size': default('font-size-huge'),
+    'h2-font-family': default('font-family-headings'),
     'h2-color': default('color-main'),
 
     'h3-font-size': default('font-size-large'),
+    'h3-font-family': default('font-family-headings'),
     'h3-color': default('color-main'),
 
     'h4-font-size': default('font-size-main'),
+    'h4-font-family': default('font-family-headings'),
     'h4-color': default('color-main'),
 
     'h5-font-size': default('font-size-main'),
+    'h5-font-family': default('font-family-headings'),
     'h5-color': default('color-main'),
 
     'h6-font-size': default('font-size-main'),
+    'h6-font-family': default('font-family-headings'),
     'h6-color': default('color-main'),
 
 

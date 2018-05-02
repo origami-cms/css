@@ -11,6 +11,7 @@
 @for $i from 1 to 6 {
     h#{$i} {
         font-size: var(--h#{$i}-font-size);
+        font-family: var(--h#{$i}-font-family);
         font-weight: var(--h#{$i}-font-weight, 400);
         color: var(--h#{$i}-color, var(--color-text));
     }
