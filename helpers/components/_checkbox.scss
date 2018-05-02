@@ -6,6 +6,7 @@
         left: 0;
         top: 0;
 
+
         &:checked + span {
             background-color: var(--color-main);
             border-color: var(--color-main);
@@ -20,6 +21,9 @@
         border: var(--input-border);
         border-radius: var(--input-border-radius);
         vertical-align: middle;
+        background-color: var(--input-bg);
+        box-shadow: var(--input-shadow);
+        transition: all var(--transition-time);
     }
 
     & + span {
