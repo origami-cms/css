@@ -1,0 +1,32 @@
+%comp-tabs {
+    display: flex;
+    height: var(--tab-height, default('size-main'));
+    line-height: var(--tab-height, default('size-main'));
+    overflow: hidden;
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        border: var(--tab-border, default('border-200'));
+        border-left: none;
+
+        &:first-of-type {
+            border-left: var(--tab-border, default('border-200'));
+            border-top-left-radius: var(--tab-border-radius, default('border-radius'));
+            border-bottom-left-radius: var(--tab-border-radius, default('border-radius'));
+        }
+        &:last-of-type {
+            border-top-right-radius: var(--tab-border-radius, default('border-radius'));
+            border-bottom-right-radius: var(--tab-border-radius, default('border-radius'));
+        }
+
+        &.active {
+            background-color: var(--tab-active-color, default('color-main'));
+            color: var(--color-white);
+        }
+
+        zen-ui-icon:not([type]) {
+            display: none;
+        }
+    }
+}
