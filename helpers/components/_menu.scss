@@ -1,0 +1,20 @@
+%comp-menu {
+    padding: 0;
+    white-space: nowrap;
+
+    .item {
+        padding: 0 var(--size-tiny);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-hover);
+        }
+
+        zen-ui-icon {
+            margin-right: 1rem;
+        }
+    }
+}

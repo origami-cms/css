@@ -4,7 +4,7 @@
     width: calc(var(--size-main) * var(--multiplier));
     height: calc(var(--size-main) * var(--multiplier));
     vertical-align: middle;
-    & use {
+    & use, & * {
         fill: var(--color-main);
     }
 
