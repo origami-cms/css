@@ -117,6 +117,7 @@ $defaults: map-merge($defaults, (
     // =========================================================================
     // --------------------------------------------------------- COLORS: Aliases
     'color-main': default('color-purple'),
+    'color-main-alt': #b155ba,
     'color-main-faint': rgba(#693a91, 0.5),
     'color-main-dark': darken(#693a91, 0.5),
     'color-main-soft': rgba(#693a91, 0.1),
@@ -185,7 +186,7 @@ $defaults: map-merge($defaults, (
     'grid-item-padding': 1rem,
 
     // ------------------------------------------------------ COMPONENTS: Button
-    'btn-bg': linear-gradient(to right, #b155ba, var(--color-main)),
+    'btn-bg': linear-gradient(to right, var(--color-main-alt), var(--color-main)),
     'btn-border-radius': default('border-radius'),
     'btn-font-weight': 600,
     'btn-height': default('size-main'),

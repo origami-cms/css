@@ -21,3 +21,61 @@
 .ani-fade-slide-up {
     animation-name: fade-slide-up;
 }
+
+
+@keyframes loading-bounce {
+    0% {
+        transform: none;
+        border-radius: 0;
+    }
+    10% {
+        border-radius: 0;
+    }
+    20% {
+        transform: translateY(calc(#{default('loading-size')} * 3.7 / 4)) rotate(45deg);
+    }
+    25% {
+        transform: translateY(calc(#{default('loading-size')} * 3.8 / 4)) rotate(45deg);
+        border-radius: 0;
+        border-bottom-right-radius: calc(#{default('loading-size')} * 1 / 4);
+    }
+    40% {
+        border-radius: 0;
+        border-bottom-right-radius: calc(#{default('loading-size')} * 1 / 4);
+    }
+    50% {
+        transform: translateY(0) rotate(90deg);
+        border-radius: 50%;
+    }
+    70% {
+        transform: translateY(calc(#{default('loading-size')} * 4.2 / 4)) rotate(360deg) scaleY(0.9) scaleX(1.1);
+        ;
+    }
+    75% {
+        transform: translateY(calc(#{default('loading-size')} * 4.3 / 4)) rotate(360deg) scaleY(0.9) scaleX(1.1);
+        border-radius: 50%;
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+@keyframes loading-bounce-shadow {
+    0%,
+    50%,
+    100% {
+        transform: scale(0.9);
+    }
+    25%,
+    75% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
