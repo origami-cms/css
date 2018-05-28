@@ -2,8 +2,8 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: var(--input-height);
-    height: var(--input-height);
+    width: default('input-height');
+    height: default('input-height');
     overflow: hidden;
 
     label, span {
@@ -20,22 +20,22 @@
 
 
         &:checked + span {
-            background-color: var(--color-main);
-            border-color: var(--color-main);
+            background-color: default('color-main');
+            border-color: default('color-main');
             background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwIDQwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjI5LjgsMTEuOSAxNi41LDI1LjIgMTAuMiwxOC45IDguOCwyMC40IDE2LjUsMjguMSAzMS4yLDEzLjQgIi8+PC9zdmc+);
         }
     }
 
     span {
         box-sizing: border-box;
-        border: var(--input-border);
-        border-radius: var(--input-border-radius);
-        background-color: var(--input-bg);
-        box-shadow: var(--input-shadow);
-        transition: all var(--transition-time);
+        border: default('input-border');
+        border-radius: default('input-border-radius');
+        background-color: default('input-bg');
+        box-shadow: default('input-shadow');
+        transition: all default('transition-time');
     }
 
     & + span {
-        margin-left: var(--size-small);
+        margin-left: default('size-small');
     }
 }
