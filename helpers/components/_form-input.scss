@@ -1,24 +1,24 @@
 %comp-form-input-general {
     display: inline-block;
-    color: var(--main);
-    background-color: var(--input-bg);
-    height: var(--input-height);
-    line-height: var(--input-height);
-    padding: 0 var(--input-padding);
-    border-radius: var(--input-border-radius);
+    color: default('color-text');
+    background-color: default('input-bg');
+    height: default('input-height');
+    line-height: default('input-height');
+    padding: 0 default('input-padding');
+    border-radius: default('input-border-radius');
     border: none;
     width: 100%;
-    border: var(--input-border);
-    transition: border var(--transition-time);
-    font-size: var(--input-font-size);
-    box-shadow: var(--input-shadow);
+    border: default('input-border');
+    transition: border default('transition-time');
+    font-size: default('input-font-size');
+    box-shadow: default('input-shadow');
 
     &:focus {
-        border: var(--input-border-focus);
+        border: default('input-border-focus');
     }
 
     &::placeholder {
-        color: var(--color-grey-300);
+        color: default('color-grey-300');
     }
 
     &:disabled {
@@ -30,13 +30,13 @@
     }
 
     &.error {
-        border-color: var(--color-error);
+        border-color: default('color-error');
     }
 }
 
 
 %comp-form-input-textarea {
-    min-height: calc(var(--input-height) * 2);
+    min-height: calc(default('input-height') * 2);
     max-width: 100%;
 }
 
@@ -66,8 +66,8 @@
             position: absolute;
             top: -2px;
             display: inline-block;
-            height: var(--input-height);
-            line-height: var(--input-height);
+            height: default('input-height');
+            line-height: default('input-height');
         }
 
         &:empty:after {
@@ -75,7 +75,7 @@
             width: 100%;
             text-align: center;
             left: 0;
-            color: var(--color-main);
+            color: default('color-main');
         }
     }
 }
@@ -83,12 +83,12 @@
 
 %comp-form-row {
     display: block;
-    margin-bottom: var(--size-small);
+    margin-bottom: default('size-small');
     position: relative;
     flex-basis: 100%;
 
     & > .i,
-    & > zen-ui-icon {
+    & > zen-icon {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -97,50 +97,50 @@
 
         &:not(.hide) {
             & + input, & + select, & + * + input, & + * + select {
-                padding-left: var(--input-height);
+                padding-left: default('input-height');
             }
         }
 
-        & + zen-ui-autocomplete {
-            --autocomplete-padding-left: var(--input-height);
+        & + zen-autocomplete {
+            --autocomplete-padding-left: default('input-height');
         }
     }
 
     span.error {
-        color: var(--color-error);
+        color: default('color-error');
         display: block;
         * { vertical-align: middle; }
     }
 
     &.width-50, &[row-width=half] {
         flex: 1;
-        margin-right: var(--size-small);
+        margin-right: default('size-small');
         &:nth-of-type(2n) {
             margin-right: 0;
         }
     }
     // label, span:first-child:not(.error) {
     //     display: inline-block;
-    //     margin-bottom: var(--size-tiny);
-    //     font-size: var(--font-size-small);
+    //     margin-bottom: default('size-tiny');
+    //     font-size: default('font-size'-small);
     //     text-transform: uppercase;
     //     font-weight: 700;
     //     letter-spacing: 2px;
-    //     color: var(--color-grey-400);
+    //     color: default('color-grey'-400);
     // }
 
     // & > span:first-child:not(.error) {
     //     display: block;
-    //     margin-top: var(--size-large);
+    //     margin-top: default('size-large');
     //     text-transform: uppercase;
     //     font-weight: bold;
-    //     line-height: var(--size-small);
+    //     line-height: default('size-small');
     // }
 
     button {
-        flex-basis: var(--btn-height);
+        flex-basis: default('btn-height');
         padding: 0;
-        margin-left: var(--size-small);
+        margin-left: default('size-small');
     }
 
 
@@ -151,7 +151,7 @@
         }
     }
 
-    zen-ui-checkbox + span {
-        margin-left: var(--size-small);
+    zen-checkbox + span {
+        margin-left: default('size-small');
     }
 }

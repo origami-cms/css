@@ -3,9 +3,9 @@
     display: flex;
     flex-wrap: wrap;
 
-    &, * {
-        @extend %reset;
-    }
+    // &, * {
+    //     @extend %reset;
+    // }
     input, select, textarea, input[type="file"] + span.input {
         @extend %comp-form-input-general;
     }

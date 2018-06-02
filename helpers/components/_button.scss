@@ -10,7 +10,7 @@
     padding: 0 default('btn-padding');
     border-radius: default('btn-border-radius');
     color: default('color-white');
-    transition: all default('transition-time');
+    transition: color default('transition-time'), background default('transition-time');
     user-select: none;
     &:not([color]) {
         background-color: default('btn-bg');
@@ -74,16 +74,7 @@
         vertical-align: middle;
     }
 
-    &.icon-right {
-        position: relative;
-        // display: block;
-        .i:last-of-type, zen-ui-icon:last-of-type {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
+
 
     @each $size in $sizes {
         &.size-#{$size}, &[size=#{$size}] {
@@ -126,4 +117,23 @@
             color: var(--color-#{$color});
         }
     }
+}
+
+%comp-button-icon-right {
+    position: relative;
+    .i:last-of-type, zen-icon {
+        float: right;
+        margin-right: 0;
+        // position: absolute;
+        // right: 0;
+        // top: 50%;
+        // transform: translateY(-50%);
+    }
+    padding-right: 0;
+
+    // @each $size in $sizes {
+    //     &.size-#{$size}, &[size=#{$size}] {
+    //         padding-right: default('size-#{$size}');
+    //     }
+    // }
 }

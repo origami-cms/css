@@ -151,10 +151,10 @@ $defaults: map-merge($defaults, (
 
     'h6-font-size': default('font-size-main'),
     'h6-font-family': default('font-family-headings'),
-    'h6-color': default('color-main'),
+    'h6-color': default('color-main')
+));
 
-
-
+$defaults: map-merge($defaults, (
     // =========================================================================
     // ================================================================= STYLING
     // =========================================================================
@@ -170,7 +170,7 @@ $defaults: map-merge($defaults, (
     'border-100': 1px solid default('color-grey-100'),
     'border-200': 2px solid default('color-grey-200'),
     'border-300': 2px solid default('color-grey-300'),
-    'border-main': 2px solid default('color-main'),
+    'border-main': 2px solid default('color-main')
 ));
 
 $defaults: map-merge($defaults, (
@@ -181,7 +181,7 @@ $defaults: map-merge($defaults, (
     'grid-item-padding': 1rem,
 
     // ------------------------------------------------------ COMPONENTS: Button
-    'btn-bg': linear-gradient(to right, var(--color-main-alt), var(--color-main)),
+    'btn-bg': linear-gradient(to bottom right, default('color-main-alt'), default('color-main')),
     'btn-border-radius': default('border-radius'),
     'btn-font-weight': 600,
     'btn-height': default('size-main'),
@@ -225,8 +225,9 @@ $defaults: map-merge($defaults, (
     'menu-padding': default('size-small'),
 
     // ----------------------------------------------------- COMPONENTS: Loading
+    'loading-border': 0.2rem solid default('color-grey-200'),
     'loading-color': default('color-white'),
-    'loading-size': default('size-small')
+    'loading-size': default('size-main')
 ));
 
 

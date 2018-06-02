@@ -9,6 +9,7 @@
         text-align: center;
         border: var(--tab-border, default('border-200'));
         border-left: none;
+        user-select: none;
 
         &:first-of-type {
             border-left: var(--tab-border, default('border-200'));
@@ -22,7 +23,7 @@
 
         &.active {
             background-color: var(--tab-active-color, default('color-main'));
-            color: var(--color-white);
+            color: default('color-white');
         }
 
         zen-ui-icon:not([type]) {
