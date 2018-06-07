@@ -112,7 +112,7 @@
         * { vertical-align: middle; }
     }
 
-    &.width-50, &[row-width=half] {
+    &.width-50, &[rowwidth=half] {
         flex: 1;
         margin-right: default('size-small');
         &:nth-of-type(2n) {
