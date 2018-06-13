@@ -83,11 +83,16 @@
 
 
 %comp-form-row {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: default('size-small');
     position: relative;
     flex-basis: 100%;
 
+    & > * {
+        align-self: flex-end;
+        width: 100%;
+    }
     & > .i,
     & > zen-icon {
         position: absolute;
@@ -108,8 +113,9 @@
     }
 
     span.error {
-        color: default('color-error');
         display: block;
+        flex-basis: 100%;
+        color: default('color-error');
         * { vertical-align: middle; }
     }
 
