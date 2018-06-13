@@ -212,6 +212,7 @@ $defaults: map-merge($defaults, (
     'card-bg': default('color-white'),
     'card-border-radius': default('border-radius'),
     'card-padding': default('size-main'),
+    'card-shadow': default('shadow-main-soft'),
 
     // --------------------------------------------------------- COMPONENTS: Nav
     'nav-bg': default('color-white'),

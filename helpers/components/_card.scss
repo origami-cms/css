@@ -1,7 +1,7 @@
 %comp-card {
-    background: var(--card-bg);
-    border: var(--card-border);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    box-shadow: var(--card-shadow);
+    background: default('card-bg');
+    border: default('card-border');
+    border-radius: default('card-border-radius');
+    padding: default('card-padding');
+    box-shadow: default('card-shadow');
 }

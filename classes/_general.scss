@@ -3,7 +3,5 @@
 .rounded { border-radius: var(--border-radius); }
 .no-select { user-select: none; }
 .card {
-    background-color: var(--card-bg);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
+    @extend %comp-card;
  }

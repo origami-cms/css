@@ -20,6 +20,7 @@
         line-height: default('size-main');
         border-bottom: default('border-100');
         padding: 0 default('size-small');
+        overflow: hidden;
         text-overflow: ellipsis;
         user-select: none;
 
