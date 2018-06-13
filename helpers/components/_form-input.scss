@@ -12,6 +12,7 @@
     transition: border default('transition-time');
     font-size: default('input-font-size');
     box-shadow: default('input-shadow');
+    font-family: default('font-family');
 
     &:focus {
         border: default('input-border-focus');
