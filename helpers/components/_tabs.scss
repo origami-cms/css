@@ -24,6 +24,7 @@
         &.active {
             background-color: var(--tab-active-color, default('color-main'));
             color: default('color-white');
+            border-color: var(--tab-active-color, default('color-main'));
         }
 
         zen-ui-icon:not([type]) {
