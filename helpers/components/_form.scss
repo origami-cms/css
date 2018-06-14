@@ -10,10 +10,6 @@
         @extend %comp-form-input-general;
     }
 
-    textarea {
-        @extend %comp-form-input-textarea;
-    }
-
     select {
         @extend %comp-form-input-select;
     }

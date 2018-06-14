@@ -37,8 +37,10 @@
 
 
 %comp-form-input-textarea {
-    min-height: calc(default('input-height') * 2);
+    resize: none;
+    min-height: calc(#{default('input-height')} * 2);
     max-width: 100%;
+    outline: none;
 }
 
 
@@ -110,6 +112,10 @@
         & + zen-autocomplete {
             --autocomplete-padding-left: default('input-height');
         }
+
+        textarea {
+            @extend %comp-form-input-textarea;
+        }
     }
 
     span.error {
@@ -126,23 +132,6 @@
             margin-right: 0;
         }
     }
-    // label, span:first-child:not(.error) {
-    //     display: inline-block;
-    //     margin-bottom: default('size-tiny');
-    //     font-size: default('font-size'-small);
-    //     text-transform: uppercase;
-    //     font-weight: 700;
-    //     letter-spacing: 2px;
-    //     color: default('color-grey'-400);
-    // }
-
-    // & > span:first-child:not(.error) {
-    //     display: block;
-    //     margin-top: default('size-large');
-    //     text-transform: uppercase;
-    //     font-weight: bold;
-    //     line-height: default('size-small');
-    // }
 
     button {
         flex-basis: default('btn-height');
