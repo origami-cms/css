@@ -143,7 +143,8 @@ $defaults: map-merge($defaults, (
 
     'h4-font-size': default('font-size-main'),
     'h4-font-family': default('font-family-headings'),
-    'h4-color': default('color-main'),
+    'h4-color': default('color-black'),
+    'h4-font-weight': 700,
 
     'h5-font-size': default('font-size-main'),
     'h5-font-family': default('font-family-headings'),
