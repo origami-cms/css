@@ -36,18 +36,24 @@ $mq-retina: "#{$mq-screen} and (-webkit-min-device-pixel-ratio: 2), (min-resolut
 
 $mq-tiny-up: $mq-screen !default;
 $mq-tiny-only: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-tiny)})" !default;
+$mq-tiny-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-tiny)})" !default;
 
 $mq-small-up: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-small)})" !default;
 $mq-small-only: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-small)}) and (max-width: #{upper-bound($mq-range-small)})" !default;
+$mq-small-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-small)})" !default;
 
 $mq-medium-up: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-medium)})" !default;
 $mq-medium-only: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-medium)}) and (max-width: #{upper-bound($mq-range-medium)})" !default;
+$mq-medium-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-medium)})" !default;
 
 $mq-large-up: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-large)})" !default;
 $mq-large-only: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-large)}) and (max-width: #{upper-bound($mq-range-large)})" !default;
+$mq-large-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-large)})" !default;
 
 $mq-huge-up: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-huge)})" !default;
 $mq-huge-only: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-huge)}) and (max-width: #{upper-bound($mq-range-huge)})" !default;
+$mq-huge-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-huge)})" !default;
 
 $mq-massive-up: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-massive)})" !default;
 $mq-massive-only: "#{$mq-screen} and (min-width: #{lower-bound($mq-range-massive)}) and (max-width: #{upper-bound($mq-range-massive)})" !default;
+$mq-massive-max: "#{$mq-screen} and (max-width: #{upper-bound($mq-range-massive)})" !default;
