@@ -19,7 +19,7 @@
     }
 
     &::placeholder {
-        color: default('color-grey-300');
+        color: default('input-placeholder-color');
     }
 
     &:disabled {
