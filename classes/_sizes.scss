@@ -5,54 +5,54 @@ $types: "margin" "padding";
         $v: var(--size-#{$size});
         $nv: calc(-1 * var(--size-#{$size}));
 
-        &.#{$type}-#{$size} { #{$type}: $v; }
-        &.n-#{$type}-#{$size} { #{$type}: $nv; }
+        .#{$type}-#{$size} { #{$type}: $v; }
+        .n-#{$type}-#{$size} { #{$type}: $nv; }
 
-        &.#{$type}-v-#{$size} {
+        .#{$type}-v-#{$size} {
             #{$type}-top: $v;
             #{$type}-bottom: $v;
         }
-        &.n-#{$type}-v-#{$size} {
+        .n-#{$type}-v-#{$size} {
             #{$type}-top: $nv;
             #{$type}-bottom: $nv;
         }
 
-        &.#{$type}-h-#{$size} {
+        .#{$type}-h-#{$size} {
             #{$type}-left: $v;
             #{$type}-right: $v;
         }
-        &.n-#{$type}-h-#{$size} {
+        .n-#{$type}-h-#{$size} {
             #{$type}-left: $nv;
             #{$type}-right: $nv;
         }
 
-        &.#{$type}-t-#{$size} { #{$type}-top: $v; }
-        &.n-#{$type}-t-#{$size} { #{$type}-top: $nv; }
-        &.#{$type}-l-#{$size} { #{$type}-left: $v; }
-        &.n-#{$type}-l-#{$size} { #{$type}-left: $nv; }
-        &.#{$type}-b-#{$size} { #{$type}-bottom: $v; }
-        &.n-#{$type}-b-#{$size} { #{$type}-bottom: $nv; }
-        &.#{$type}-r-#{$size} { #{$type}-right: $v; }
-        &.n-#{$type}-r-#{$size} { #{$type}-right: $nv; }
+        .#{$type}-t-#{$size} { #{$type}-top: $v; }
+        .n-#{$type}-t-#{$size} { #{$type}-top: $nv; }
+        .#{$type}-l-#{$size} { #{$type}-left: $v; }
+        .n-#{$type}-l-#{$size} { #{$type}-left: $nv; }
+        .#{$type}-b-#{$size} { #{$type}-bottom: $v; }
+        .n-#{$type}-b-#{$size} { #{$type}-bottom: $nv; }
+        .#{$type}-r-#{$size} { #{$type}-right: $v; }
+        .n-#{$type}-r-#{$size} { #{$type}-right: $nv; }
     }
 
-    &.#{$type}-none { #{$type}: 0 !important; }
-    &.#{$type}-t-none { #{$type}-top: 0 !important; }
-    &.#{$type}-l-none { #{$type}-left: 0 !important; }
-    &.#{$type}-b-none { #{$type}-bottom: 0 !important; }
-    &.#{$type}-r-none { #{$type}-right: 0 !important; }
+    .#{$type}-none { #{$type}: 0 !important; }
+    .#{$type}-t-none { #{$type}-top: 0 !important; }
+    .#{$type}-l-none { #{$type}-left: 0 !important; }
+    .#{$type}-b-none { #{$type}-bottom: 0 !important; }
+    .#{$type}-r-none { #{$type}-right: 0 !important; }
 }
 
 @each $type in "width" "height" {
     @each $size in $sizes {
-        &.#{$type}-#{$size} {
+        .#{$type}-#{$size} {
             #{$type}: var(--size-#{$size});
         }
     }
 }
 
 @each $size in $sizes {
-    &.size-#{$size} {
+    .size-#{$size} {
         width: var(--size-#{$size});
         height: var(--size-#{$size});
     }
