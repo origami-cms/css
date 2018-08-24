@@ -52,11 +52,11 @@ $defaults: (
     'color-grey-100': #f5f5f5,
     'color-grey-200': #eae3f0,
     'color-grey-300': #bda9cf,
-    'color-grey-400': #bbb,
-    'color-grey-500': #999999,
-    'color-grey-600': #777777,
-    'color-grey-700': #666,
-    'color-grey-800': #555,
+    'color-grey-400': #a38bb8,
+    'color-grey-500': #9681a8,
+    'color-grey-600': #705a83,
+    'color-grey-700': #6e5781,
+    'color-grey-800': #544363,
     'color-grey-900': #443750,
     'color-black': #3e3e3e,
 
@@ -118,6 +118,8 @@ $defaults: map-merge($defaults, (
     'color-alt': default('color-orange'),
     'color-error': default('color-red'),
     'color-success': default('color-green'),
+    'color-active': default('color-blue'),
+    'color-active-soft': rgba(#23a8e6, 0.05),
 
     'color-main-softest': #f8f8ff,
     'color-text': default('color-grey-900'),
@@ -184,7 +186,9 @@ $defaults: map-merge($defaults, (
     // ------------------------------------------------------ COMPONENTS: Button
     'btn-bg': linear-gradient(to bottom right, default('color-main-alt'), default('color-main')),
     'btn-border-radius': default('border-radius'),
+    'btn-font-family': default('font-family'),
     'btn-font-weight': 600,
+    'btn-font-size': default('font-size-main'),
     'btn-height': default('size-main'),
     'btn-padding': default('size-small'),
 
@@ -198,6 +202,7 @@ $defaults: map-merge($defaults, (
     'input-border-focus': default('border-main'),
     'input-border-radius': default('border-radius'),
     'input-font-size': default('font-size-main'),
+    'input-placeholder-color': default('color-grey-300'),
 
     // ------------------------------------------------------- COMPONENTS: Table
     'table-header-height': default('size-medium'),
