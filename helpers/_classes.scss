@@ -27,3 +27,10 @@
 %rounded {
     border-radius: var(--border-radius);
 }
+
+
+%ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
