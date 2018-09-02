@@ -45,6 +45,7 @@ $defaults: (
     'color-blue': #23a8e6,
     'color-red': #ff5554,
     'color-green': #28c787,
+    'color-yellow': #f8c555,
 
     // ----------------------------------------------------------- COLORS: Greys
     'color-white': white,
@@ -58,7 +59,7 @@ $defaults: (
     'color-grey-700': #6e5781,
     'color-grey-800': #544363,
     'color-grey-900': #443750,
-    'color-black': #3e3e3e,
+    'color-black': #3f2655,
 
 
     // =========================================================================
@@ -116,15 +117,18 @@ $defaults: map-merge($defaults, (
     'color-main-dark': darken(#693a91, 0.5),
     'color-main-soft': rgba(#693a91, 0.1),
     'color-alt': default('color-orange'),
+    'color-alt-light': lighten(#ff791f, 35%),
     'color-error': default('color-red'),
     'color-success': default('color-green'),
     'color-active': default('color-blue'),
     'color-active-soft': rgba(#23a8e6, 0.05),
 
     'color-main-softest': #f8f8ff,
-    'color-text': default('color-grey-900'),
+    'color-text': default('color-grey-600'),
     'color-bg': #f8f8ff,
     'color-hover': default('color-grey-50'),
+
+    'color-yellow-light': lighten(#f8c555, 30%),
 
 
     // =========================================================================
@@ -234,7 +238,10 @@ $defaults: map-merge($defaults, (
     // ----------------------------------------------------- COMPONENTS: Loading
     'loading-border': 0.2rem solid default('color-grey-200'),
     'loading-color': default('color-white'),
-    'loading-size': default('size-main')
+    'loading-size': default('size-main'),
+
+    // ---------------------------------------------------------- COMPONENTS: HR
+    'hr-color': default('color-grey-100')
 ));
 
 

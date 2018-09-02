@@ -25,6 +25,14 @@ a, wc-link {
     color: var(--color-main);
 }
 
+p {
+    line-height: 2;
+    margin-bottom: var(--size-small);
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 // ------------------------------------------------------------------------ Misc
 small {
     font-size: var(--fs-small);
