@@ -17,3 +17,6 @@
 .weight-heavy {
     font-weight: 700;
 }
+.ellipsis {
+    @extend %ellipsis;
+}
