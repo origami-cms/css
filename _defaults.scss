@@ -209,6 +209,8 @@ $defaults: map-merge($defaults, (
     'input-font-size': default('font-size-main'),
     'input-placeholder-color': default('color-grey-300'),
 
+    'checkbox-color-active': default('color-main'),
+
     // ------------------------------------------------------- COMPONENTS: Table
     'table-header-height': default('size-medium'),
     'table-row-height': default('size-large'),
