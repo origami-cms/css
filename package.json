@@ -1,6 +1,6 @@
 {
   "name": "zen-css",
-  "version": "1.1.15",
+  "version": "1.1.16-alpha.0",
   "description": "Base CSS framework for Origami Zen admin and Snow theme",
   "main": "base.scss",
   "repository": "https://github.com/origami-cms/css",
