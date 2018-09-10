@@ -200,8 +200,7 @@ $defaults: map-merge($defaults, (
     // -------------------------------------------------------- COMPONENTS: Form
     'form-bg': default('color-white'),
     'input-bg': transparent,
-    'input-height': default('size-large'),
-    'input-height-small': default('size-main'),
+    'input-height': default('size-main'),
     'input-padding': default('size-small'),
     'input-border': default('border-200'),
     'input-border-focus': default('border-main'),

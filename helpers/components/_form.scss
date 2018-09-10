@@ -50,11 +50,4 @@
             }
         }
     }
-
-
-    &.input-small {
-        input, select, textarea {
-            height: var(--input-height-small);
-        }
-    }
 }
