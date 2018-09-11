@@ -3,6 +3,9 @@
     .background-#{$color} { background-color: var(--color-#{$color}); }
 }
 
+.success {
+    color: var(--color-success);
+}
 .error {
     color: var(--color-error);
 }
