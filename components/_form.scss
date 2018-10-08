@@ -2,6 +2,7 @@ form {
     @extend %comp-form;
 }
 
+@import '../animations/checkbox';
 .checkbox {
     @extend %comp-checkbox;
 }
