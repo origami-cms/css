@@ -29,11 +29,14 @@ $colors: (
     'error'
 );
 
+@function defaultValue($key) {
+    @return map-get($defaults, $key);
+}
 
 @function default($key) {
-    $val: map-get($defaults, $key);
-    @return var(--#{$key}, $val);
+    @return var(--#{$key}, #{defaultValue($key)});
 }
+
 
 
 $defaults: (
