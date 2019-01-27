@@ -1,38 +1,38 @@
 %comp-modal {
+  @extend %cover;
+  position: fixed;
+  z-index: 100;
+
+  .overlay {
     @extend %cover;
     position: fixed;
-    z-index: 100;
 
-    .overlay {
-        @extend %cover;
-        position: fixed;
+    background-color: default('modal-overlay');
+  }
 
-        background-color: default('modal-overlay');
+  .modal {
+    display: inline-block;
+    position: relative;
+    background: default('modal-bg');
+    padding: var(--size-main);
+    max-width: calc(100% - (4 * var(--size-main)));
+    @extend %rounded;
+    @extend %center;
+
+    header {
+      margin: calc(-1 * var(--size-main));
+      margin-bottom: 0;
+      padding: var(--size-small);
+
+      h3 {
+        margin: 0;
+      }
+
+      zen-ui-icon[type=cross] {
+        position: absolute;
+        right: var(--size-small);
+        top: var(--size-small);
+      }
     }
-
-    .modal {
-        display: inline-block;
-        position: relative;
-        background: default('modal-bg');
-        padding: var(--size-main);
-        max-width: calc(100% - (4 * var(--size-main)));
-        @extend %rounded;
-        @extend %center;
-
-        header {
-            margin: calc(-1 * var(--size-main));
-            margin-bottom: 0;
-            padding: var(--size-small);
-
-            h3 {
-                margin: 0;
-            }
-
-            zen-ui-icon[type=cross] {
-                position: absolute;
-                right: var(--size-small);
-                top: var(--size-small);
-            }
-        }
-    }
+  }
 }

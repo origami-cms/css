@@ -1,60 +1,75 @@
-$types: "margin" "padding";
+$types: "margin", "padding";
 
+// Loop over margin and padding
 @each $type in $types {
-    @each $size in $sizes {
-        $v: var(--size-#{$size});
-        $nv: calc(-1 * var(--size-#{$size}));
 
-        .#{$type}-#{$size} { #{$type}: $v; }
-        .n-#{$type}-#{$size} { #{$type}: $nv; }
+  // Loop over all sizes to create margin and padding variations
+  @each $size in $sizes {
+    // Use CSS var size
+    $v: var(--size-#{$size});
+    // Negative value
+    $nv: calc(-1 * var(--size-#{$size}));
 
-        .#{$type}-v-#{$size} {
-            #{$type}-top: $v;
-            #{$type}-bottom: $v;
-        }
-        .n-#{$type}-v-#{$size} {
-            #{$type}-top: $nv;
-            #{$type}-bottom: $nv;
-        }
 
-        .#{$type}-h-#{$size} {
-            #{$type}-left: $v;
-            #{$type}-right: $v;
-        }
-        .n-#{$type}-h-#{$size} {
-            #{$type}-left: $nv;
-            #{$type}-right: $nv;
-        }
+    // Main type + size (and negative)
+    .#{$type}-#{$size} { @extend %#{$type}-#{$size}; }
+    .n-#{$type}-#{$size} { @extend %n-#{$type}-#{$size}; }
 
-        .#{$type}-t-#{$size} { #{$type}-top: $v; }
-        .n-#{$type}-t-#{$size} { #{$type}-top: $nv; }
-        .#{$type}-l-#{$size} { #{$type}-left: $v; }
-        .n-#{$type}-l-#{$size} { #{$type}-left: $nv; }
-        .#{$type}-b-#{$size} { #{$type}-bottom: $v; }
-        .n-#{$type}-b-#{$size} { #{$type}-bottom: $nv; }
-        .#{$type}-r-#{$size} { #{$type}-right: $v; }
-        .n-#{$type}-r-#{$size} { #{$type}-right: $nv; }
-    }
+    // Vertical & negative vertical
+    .#{$type}-v-#{$size} { @extend %#{$type}-v-#{$size}; #{$type}-bottom: $v; }
+    .n-#{$type}-v-#{$size} { @extend %n-#{$type}-v-#{$size}; #{$type}-bottom: $nv; }
 
-    .#{$type}-none { #{$type}: 0 !important; }
-    .#{$type}-t-none { #{$type}-top: 0 !important; }
-    .#{$type}-l-none { #{$type}-left: 0 !important; }
-    .#{$type}-b-none { #{$type}-bottom: 0 !important; }
-    .#{$type}-r-none { #{$type}-right: 0 !important; }
+    // Horizontal & negative horizontal
+    .#{$type}-h-#{$size} { @extend %#{$type}-h-#{$size}; }
+    .n-#{$type}-h-#{$size} { @extend %n-#{$type}-h-#{$size}; }
+
+    // Top
+    .#{$type}-t-#{$size} { @extend %#{$type}-t-#{$size}; }
+    .n-#{$type}-t-#{$size} { @extend %n-#{$type}-t-#{$size}; }
+
+    // Left
+    .#{$type}-l-#{$size} { @extend %#{$type}-l-#{$size}; }
+    .n-#{$type}-l-#{$size} { @extend %n-#{$type}-l-#{$size}; }
+
+    // Bottom
+    .#{$type}-b-#{$size} { @extend %#{$type}-b-#{$size}; }
+    .n-#{$type}-b-#{$size} { @extend %n-#{$type}-b-#{$size}; }
+
+    // Right
+    .#{$type}-r-#{$size} { @extend %#{$type}-r-#{$size}; }
+    .n-#{$type}-r-#{$size} { @extend %n-#{$type}-r-#{$size}; }
+  }
+
+  .#{$type}-none { @extend %#{$type}-none; }
+  .#{$type}-t-none { @extend %#{$type}-t-none; }
+  .#{$type}-l-none { @extend %#{$type}-l-none; }
+  .#{$type}-b-none { @extend %#{$type}-b-none; }
+  .#{$type}-r-none { @extend %#{$type}-r-none; }
 }
 
-@each $type in "width" "height" {
-    @each $size in $sizes {
-        .#{$type}-#{$size} {
-            #{$type}: var(--size-#{$size});
-        }
+// With and height sizes (eg: width-small, height-large)
+@each $type in "width", "height" {
+  @each $size in $sizes {
+    .#{$type}-#{$size} {
+      @extend %#{$type}-#{$size};
     }
+  }
 }
 
+// With and height as percentages (eg: width-10, height: 70)
+@for $i from 1 to 11 {
+  .width-#{$i * 10} {
+    @extend %width-#{$i * 10};
+  }
+
+  .height-#{$i * 10} {
+    @extend %height-#{$i * 10};
+  }
+}
+
+// Squares for each size (eg: size-large)
 @each $size in $sizes {
-    .size-#{$size} {
-        width: var(--size-#{$size});
-        height: var(--size-#{$size});
-    }
+  .size-#{$size} {
+    @extend %size-#{$size};
+  }
 }
-

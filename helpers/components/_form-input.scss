@@ -1,153 +1,163 @@
 %comp-form-input-general {
-    display: inline-block;
-    color: default('color-text');
-    background-color: default('input-bg');
-    height: default('input-height');
-    line-height: default('input-height');
-    padding: 0 default('input-padding');
-    border-radius: default('input-border-radius');
-    border: none;
-    width: 100%;
-    border: default('input-border');
-    transition: border default('transition-time');
-    font-size: default('input-font-size');
-    box-shadow: default('input-shadow');
-    font-family: default('font-family');
+  display: inline-block;
+  color: default('color-text');
+  background-color: default('input-bg');
+  height: default('input-height');
+  line-height: default('input-height');
+  padding: 0 default('input-padding');
+  border-radius: default('input-border-radius');
+  width: 100%;
+  border: default('input-border');
+  transition: border default('transition-time');
+  font-size: default('input-font-size');
+  box-shadow: default('input-shadow');
+  font-family: default('font-family');
 
-    &:focus {
-        border: default('input-border-focus');
-    }
+  &:focus {
+    border: default('input-border-focus');
+  }
 
-    &::placeholder {
-        color: default('input-placeholder-color');
-    }
+  &::placeholder {
+    color: default('input-placeholder-color');
+  }
 
-    &:disabled {
-        opacity: 0.5;
-        user-select: none;
-    }
-    &:read-only {
-        user-select: none;
-    }
+  &:disabled {
+    opacity: 0.5;
+    user-select: none;
+  }
 
-    &.error {
-        border-color: default('color-error');
-    }
+  &:read-only {
+    user-select: none;
+  }
+
+  &.error {
+    border-color: default('color-error');
+  }
 }
 
 
 %comp-form-input-textarea {
-    resize: none;
-    min-height: calc(#{default('input-height')} * 2);
-    max-width: 100%;
-    outline: none;
+  resize: none;
+  min-height: calc(#{default('input-height')} * 2);
+  max-width: 100%;
+  outline: none;
 }
 
 
 %comp-form-input-select {
-    padding-right: 4rem;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0idmFyKC0tY29sb3ItZ3JleS0zMDAsICNlZGVkZWQpIiBkPSJNMjkuNyAxNC44Yy0uNC0uNC0xLS40LTEuNCAwTDIwIDIzLjFsLTguMy04LjNjLS40LS40LTEtLjQtMS40IDBzLS40IDEgMCAxLjRsOSA5Yy4yLjIuNS4zLjcuM3MuNS0uMS43LS4zbDktOWMuNC0uNC40LTEgMC0xLjR6Ii8+PC9zdmc+);
-    background-repeat: no-repeat;
-    background-position: right center;
+  padding-right: 4rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0idmFyKC0tY29sb3ItZ3JleS0zMDAsICNlZGVkZWQpIiBkPSJNMjkuNyAxNC44Yy0uNC0uNC0xLS40LTEuNCAwTDIwIDIzLjFsLTguMy04LjNjLS40LS40LTEtLjQtMS40IDBzLS40IDEgMCAxLjRsOSA5Yy4yLjIuNS4zLjcuM3MuNS0uMS43LS4zbDktOWMuNC0uNC40LTEgMC0xLjR6Ii8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 
 
 %comp-form-input-file {
-    width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-    z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 
-    & + span.input {
-        position: relative;
-        cursor: pointer;
+  &+span.input {
+    position: relative;
+    cursor: pointer;
 
-        &:after {
-            position: absolute;
-            top: -2px;
-            display: inline-block;
-            height: default('input-height');
-            line-height: default('input-height');
-        }
-
-        &:empty:after {
-            content: 'Upload file';
-            width: 100%;
-            text-align: center;
-            left: 0;
-            color: default('color-main');
-        }
+    &:after {
+      position: absolute;
+      top: -2px;
+      display: inline-block;
+      height: default('input-height');
+      line-height: default('input-height');
     }
+
+    &:empty:after {
+      content: 'Upload file';
+      width: 100%;
+      text-align: center;
+      left: 0;
+      color: default('color-main');
+    }
+  }
 }
 
 
 %comp-form-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: default('size-small');
-    position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: default('size-small');
+  position: relative;
+  flex-basis: 100%;
+
+  &>* {
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  &>.i,
+  &>zen-icon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 1rem;
+    z-index: 1;
+
+    &:not(.hide) {
+
+      &+input,
+      &+select,
+      &+*+input,
+      &+*+select {
+        padding-left: default('input-height');
+      }
+    }
+
+    &+zen-autocomplete {
+      --autocomplete-padding-left: default('input-height');
+    }
+
+    textarea {
+      @extend %comp-form-input-textarea;
+    }
+  }
+
+  span.error {
+    display: block;
     flex-basis: 100%;
+    color: default('color-error');
 
-    & > * {
-        align-self: flex-end;
-        width: 100%;
+    * {
+      vertical-align: middle;
     }
-    & > .i,
-    & > zen-icon {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        margin: 1rem;
-        z-index: 1;
+  }
 
-        &:not(.hide) {
-            & + input, & + select, & + * + input, & + * + select {
-                padding-left: default('input-height');
-            }
-        }
+  &.width-50,
+  &[rowwidth=half] {
+    flex: 1;
+    margin-right: default('size-small');
 
-        & + zen-autocomplete {
-            --autocomplete-padding-left: default('input-height');
-        }
-
-        textarea {
-            @extend %comp-form-input-textarea;
-        }
+    &:nth-of-type(2n) {
+      margin-right: 0;
     }
+  }
 
-    span.error {
-        display: block;
-        flex-basis: 100%;
-        color: default('color-error');
-        * { vertical-align: middle; }
+  button {
+    flex-basis: default('btn-height');
+    padding: 0;
+    margin-left: default('size-small');
+  }
+
+
+
+  &.disabled {
+    .i {
+      opacity: 0.5;
     }
+  }
 
-    &.width-50, &[rowwidth=half] {
-        flex: 1;
-        margin-right: default('size-small');
-        &:nth-of-type(2n) {
-            margin-right: 0;
-        }
-    }
-
-    button {
-        flex-basis: default('btn-height');
-        padding: 0;
-        margin-left: default('size-small');
-    }
-
-
-
-    &.disabled {
-        .i {
-            opacity: 0.5;
-        }
-    }
-
-    zen-checkbox + span {
-        margin-left: default('size-small');
-    }
+  zen-checkbox+span {
+    margin-left: default('size-small');
+  }
 }

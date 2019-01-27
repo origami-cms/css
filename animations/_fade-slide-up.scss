@@ -1,0 +1,11 @@
+@keyframes fade-slide-up {
+  from {
+    margin-top: var(--size-large);
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

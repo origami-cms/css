@@ -1,0 +1,21 @@
+%hide {
+  display: none !important;
+}
+
+%round {
+  border-radius: 50%;
+}
+
+%rounded {
+  border-radius: var(--border-radius);
+}
+
+%no-select {
+  user-select: none;
+}
+
+%ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

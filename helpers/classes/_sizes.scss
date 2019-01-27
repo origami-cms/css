@@ -1,0 +1,129 @@
+$types: "margin", "padding";
+
+// Loop over margin and padding
+@each $type in $types {
+
+  // Loop over all sizes to create margin and padding variations
+  @each $size in $sizes {
+    // Use CSS var size
+    $v: var(--size-#{$size});
+    // Negative value
+    $nv: calc(-1 * var(--size-#{$size}));
+
+
+    // Main type + size (and negative)
+    %#{$type}-#{$size} {
+      #{$type}: $v;
+    }
+
+    %n-#{$type}-#{$size} {
+      #{$type}: $nv;
+    }
+
+    // Vertical & negative vertical
+    %#{$type}-v-#{$size} {
+      #{$type}-top: $v;
+      #{$type}-bottom: $v;
+    }
+
+    %n-#{$type}-v-#{$size} {
+      #{$type}-top: $nv;
+      #{$type}-bottom: $nv;
+    }
+
+    // Horizontal & negative horizontal
+    %#{$type}-h-#{$size} {
+      #{$type}-left: $v;
+      #{$type}-right: $v;
+    }
+
+    %n-#{$type}-h-#{$size} {
+      #{$type}-left: $nv;
+      #{$type}-right: $nv;
+    }
+
+    // Top
+    %#{$type}-t-#{$size} {
+      #{$type}-top: $v;
+    }
+
+    %n-#{$type}-t-#{$size} {
+      #{$type}-top: $nv;
+    }
+
+    // Left
+    %#{$type}-l-#{$size} {
+      #{$type}-left: $v;
+    }
+
+    %n-#{$type}-l-#{$size} {
+      #{$type}-left: $nv;
+    }
+
+    // Bottom
+    %#{$type}-b-#{$size} {
+      #{$type}-bottom: $v;
+    }
+
+    %n-#{$type}-b-#{$size} {
+      #{$type}-bottom: $nv;
+    }
+
+    // Right
+    %#{$type}-r-#{$size} {
+      #{$type}-right: $v;
+    }
+
+    %n-#{$type}-r-#{$size} {
+      #{$type}-right: $nv;
+    }
+  }
+
+  %#{$type}-none {
+    #{$type}: 0 !important;
+  }
+
+  %#{$type}-t-none {
+    #{$type}-top: 0 !important;
+  }
+
+  %#{$type}-l-none {
+    #{$type}-left: 0 !important;
+  }
+
+  %#{$type}-b-none {
+    #{$type}-bottom: 0 !important;
+  }
+
+  %#{$type}-r-none {
+    #{$type}-right: 0 !important;
+  }
+}
+
+// With and height sizes (eg: width-small, height-large)
+@each $type in "width", "height" {
+  @each $size in $sizes {
+    %#{$type}-#{$size} {
+      #{$type}: var(--size-#{$size});
+    }
+  }
+}
+
+// With and height as percentages (eg: width-10, height: 70)
+@for $i from 1 to 11 {
+  %width-#{$i * 10} {
+    width: $i * 10%;
+  }
+
+  %height-#{$i * 10} {
+    height: $i * 10%;
+  }
+}
+
+// Squares for each size (eg: size-large)
+@each $size in $sizes {
+  %size-#{$size} {
+    width: var(--size-#{$size});
+    height: var(--size-#{$size});
+  }
+}

@@ -1,12 +1,12 @@
 @each $name, $grad in $gradients {
-    .gradient-#{$name} {
-        background: gradient($name);
-    }
+  .gradient-#{$name} {
+    @extend %gradient-#{$name};
+  }
 
 }
 
 :root {
-    @each $name, $grad in $gradients {
-        --gradient-#{$name}: #{gradient($name)};
-    }
+  @each $name, $grad in $gradients {
+    --gradient-#{$name}: #{gradient($name)};
+  }
 }

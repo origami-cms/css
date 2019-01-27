@@ -1,5 +1,5 @@
 :root {
-    @each $key, $var in $defaults {
-        --#{$key}: #{$var};
-    }
+  @each $key, $var in $defaults {
+    --#{$key}: #{$var};
+  }
 }

@@ -1,35 +1,33 @@
 %comp-loading {
-    position: relative;
-    display: block;
-    height: #{default('loading-size')};
+  position: relative;
+  display: block;
+  height: #{default('loading-size')};
+  width: #{default('loading-size')};
+
+  &:before {
+    content: '';
+    background: default('loading-color');
+    position: absolute;
+    left: 50%;
     width: #{default('loading-size')};
+    height: #{default('loading-size')};
+    margin-left: calc(#{default('loading-size')} / -2);
+    animation: loading-bounce infinite 1.5s ease-in-out;
+  }
 
-    &:before {
-        content: '';
-        background: default('loading-color');
-        position: absolute;
-        left: 50%;
-        width: #{default('loading-size')};
-        height: #{default('loading-size')};
-        margin-left: calc(#{default('loading-size')} / -2);
-        animation: loading-bounce infinite 1.5s ease-in-out;
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        background: default('loading-color');
-        display: inline-block;
-        width: calc(#{default('loading-size')} * 3 / 4);
-        height: calc(#{default('loading-size')} * 1 / 4);
-        ;
-        left: 50%;
-        margin-left: calc(#{default('loading-size')} * -1.5 / 4);
-        top: calc(100% + (#{default('loading-size')} * 3 / 4));
-        border-radius: 50%;
-        animation: loading-bounce-shadow infinite 1.5s ease-in-out;
-        opacity: 0.1;
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    background: default('loading-color');
+    display: inline-block;
+    width: calc(#{default('loading-size')} * 3 / 4);
+    height: calc(#{default('loading-size')} * 1 / 4);
+    ;
+    left: 50%;
+    margin-left: calc(#{default('loading-size')} * -1.5 / 4);
+    top: calc(100% + (#{default('loading-size')} * 3 / 4));
+    border-radius: 50%;
+    animation: loading-bounce-shadow infinite 1.5s ease-in-out;
+    opacity: 0.1;
+  }
 }
-
-

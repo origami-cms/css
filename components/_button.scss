@@ -1,8 +1,8 @@
 zen-ui-button, button, .button, input[type='submit'] {
-    @extend %comp-button;
+  @extend %comp-button;
 }
 
 
 .button-group {
-    @extend %comp-button-group;
+  @extend %comp-button-group;
 }

@@ -1,252 +1,261 @@
 $sizes: (
-    'tiny',
-    'small',
-    'medium',
-    'main',
-    'large',
-    'huge',
-    'super',
-    'hero'
+  'tiny',
+  'small',
+  'medium',
+  'main',
+  'large',
+  'huge',
+  'super',
+  'hero'
 );
 
 $colors: (
-    'main',
-    'alt',
-    'active',
-    'text',
-    'white',
-    'grey-50',
-    'grey-100',
-    'grey-200',
-    'grey-300',
-    'grey-400',
-    'grey-500',
-    'grey-600',
-    'grey-700',
-    'grey-800',
-    'grey-900',
-    'black',
-    'error'
+  'main',
+  'alt',
+  'active',
+  'text',
+  'grey-50',
+  'grey-100',
+  'grey-200',
+  'grey-300',
+  'grey-400',
+  'grey-500',
+  'grey-600',
+  'grey-700',
+  'grey-800',
+  'grey-900',
+  'error',
+  'success',
+
+  'white',
+  'black',
+  'purple',
+  'orange',
+  'blue',
+  'red',
+  'green',
+  'yellow'
 );
 
 @function defaultValue($key) {
-    @return map-get($defaults, $key);
+  @return map-get($defaults, $key);
 }
 
 @function default($key) {
-    @return var(--#{$key}, #{defaultValue($key)});
+  @return var(--#{$key}, #{defaultValue($key)});
 }
 
 
 
 $defaults: (
-    // =========================================================================
-    // ================================================================== COLORS
-    // =========================================================================
-    // ------------------------------------------------------------ COLORS: Main
-    'color-purple': #693a91,
-    'color-orange': #ff791f,
-    'color-blue': #23a8e6,
-    'color-red': #ff5554,
-    'color-green': #28c787,
-    'color-yellow': #f8c555,
+  // =========================================================================
+  // ================================================================== COLORS
+  // =========================================================================
+  // ------------------------------------------------------------ COLORS: Main
+  'color-purple': #693a91,
+  'color-orange': #ff791f,
+  'color-blue': #23a8e6,
+  'color-red': #ff5554,
+  'color-green': #28c787,
+  'color-yellow': #f8c555,
 
-    // ----------------------------------------------------------- COLORS: Greys
-    'color-white': white,
-    'color-grey-50': #f8f8ff,
-    'color-grey-100': #f5f5f5,
-    'color-grey-200': #eae3f0,
-    'color-grey-300': #bda9cf,
-    'color-grey-400': #a38bb8,
-    'color-grey-500': #9681a8,
-    'color-grey-600': #705a83,
-    'color-grey-700': #6e5781,
-    'color-grey-800': #544363,
-    'color-grey-900': #443750,
-    'color-black': #3f2655,
-
-
-    // =========================================================================
-    // =================================================================== FONTS
-    // =========================================================================
-    // --------------------------------------------------------- FONTS: Families
-    'font-family': ('Work Sans', sans-serif),
-    'font-family-headings': ('Work Sans', serif),
-
-    // ------------------------------------------------------------ FONTS: Sizes
-    'font-size-base': 10px,
-    'font-size-tiny': 1.2rem,
-    'font-size-small': 1.4rem,
-    'font-size-main': 1.6rem,
-    'font-size-large': 2.4rem,
-    'font-size-huge': 3.6rem,
-    'font-size-super': 4.8rem,
-    'font-size-hero': 6.4rem,
+  // ----------------------------------------------------------- COLORS: Greys
+  'color-white': white,
+  'color-grey-50': #f8f8ff,
+  'color-grey-100': #f5f5f5,
+  'color-grey-200': #eae3f0,
+  'color-grey-300': #bda9cf,
+  'color-grey-400': #a38bb8,
+  'color-grey-500': #9681a8,
+  'color-grey-600': #705a83,
+  'color-grey-700': #6e5781,
+  'color-grey-800': #544363,
+  'color-grey-900': #443750,
+  'color-black': #3f2655,
 
 
-    // =========================================================================
-    // =================================================================== SIZES
-    // =========================================================================
-    // ----------------------------------------------------------- SIZES: Layout
-    'size-tiny': 1rem,
-    'size-small': 2rem,
-    'size-medium': 3rem,
-    'size-main': 4rem,
-    'size-large': 6rem,
-    'size-huge': 8rem,
-    'size-super': 12rem,
-    'size-hero': 24rem,
+  // =========================================================================
+  // =================================================================== FONTS
+  // =========================================================================
+  // --------------------------------------------------------- FONTS: Families
+  'font-family': ('Work Sans', sans-serif),
+  'font-family-headings': ('Work Sans', serif),
 
-    // =========================================================================
-    // ================================================================= STYLING
-    // =========================================================================
-    // -------------------------------------------------------- STYLING: Borders
-    'border-radius': 0.4rem,
+  // ------------------------------------------------------------ FONTS: Sizes
+  'font-size-base': 10px,
+  'font-size-tiny': 1.2rem,
+  'font-size-small': 1.4rem,
+  'font-size-main': 1.6rem,
+  'font-size-large': 2.4rem,
+  'font-size-huge': 3.6rem,
+  'font-size-super': 4.8rem,
+  'font-size-hero': 6.4rem,
 
-    // =========================================================================
-    // ==================================================================== MISC
-    // =========================================================================
-    'line-height': 1.5,
-    'transition-time': 0.35s
+
+  // =========================================================================
+  // =================================================================== SIZES
+  // =========================================================================
+  // ----------------------------------------------------------- SIZES: Layout
+  'size-tiny': 1rem,
+  'size-small': 2rem,
+  'size-medium': 3rem,
+  'size-main': 4rem,
+  'size-large': 6rem,
+  'size-huge': 8rem,
+  'size-super': 12rem,
+  'size-hero': 24rem,
+
+  // =========================================================================
+  // ================================================================= STYLING
+  // =========================================================================
+  // -------------------------------------------------------- STYLING: Borders
+  'border-radius': 0.4rem,
+
+  // =========================================================================
+  // ==================================================================== MISC
+  // =========================================================================
+  'line-height': 1.5,
+  'transition-time': 0.35s,
+  'ease-out-back': cubic-bezier(0.175, 0.885, 0.32, 1.275)
 );
 
 $defaults: map-merge($defaults, (
-    // =========================================================================
-    // ================================================================== COLORS
-    // =========================================================================
-    // --------------------------------------------------------- COLORS: Aliases
-    'color-main': default('color-purple'),
-    'color-main-alt': #b155ba,
-    'color-main-faint': rgba(#693a91, 0.5),
-    'color-main-dark': darken(#693a91, 0.5),
-    'color-main-soft': rgba(#693a91, 0.1),
-    'color-alt': default('color-orange'),
-    'color-alt-light': lighten(#ff791f, 35%),
-    'color-error': default('color-red'),
-    'color-success': default('color-green'),
-    'color-active': default('color-blue'),
-    'color-active-soft': rgba(#23a8e6, 0.05),
+  // =========================================================================
+  // ================================================================== COLORS
+  // =========================================================================
+  // --------------------------------------------------------- COLORS: Aliases
+  'color-main': default('color-purple'),
+  'color-main-alt': #b155ba,
+  'color-main-faint': rgba(#693a91, 0.5),
+  'color-main-dark': darken(#693a91, 0.5),
+  'color-main-soft': rgba(#693a91, 0.1),
+  'color-alt': default('color-orange'),
+  'color-alt-light': lighten(#ff791f, 35%),
+  'color-error': default('color-red'),
+  'color-success': default('color-green'),
+  'color-active': default('color-blue'),
+  'color-active-soft': rgba(#23a8e6, 0.05),
 
-    'color-main-softest': #f8f8ff,
-    'color-text': default('color-grey-600'),
-    'color-bg': #f8f8ff,
-    'color-hover': default('color-grey-50'),
+  'color-main-softest': #f8f8ff,
+  'color-text': default('color-grey-600'),
+  'color-bg': #f8f8ff,
+  'color-hover': default('color-grey-50'),
 
-    'color-yellow-light': lighten(#f8c555, 30%),
+  'color-yellow-light': lighten(#f8c555, 30%),
 
 
-    // =========================================================================
-    // =================================================================== FONTS
-    // =========================================================================
-    // --------------------------------------------------------- FONTS: Headings
-    'h1-font-size': default('font-size-super'),
-    'h1-font-family': default('font-family-headings'),
-    'h1-color': default('color-main'),
+  // =========================================================================
+  // =================================================================== FONTS
+  // =========================================================================
+  // --------------------------------------------------------- FONTS: Headings
+  'h1-font-size': default('font-size-super'),
+  'h1-font-family': default('font-family-headings'),
+  'h1-color': default('color-main'),
 
-    'h2-font-size': default('font-size-huge'),
-    'h2-font-family': default('font-family-headings'),
-    'h2-color': default('color-main'),
+  'h2-font-size': default('font-size-huge'),
+  'h2-font-family': default('font-family-headings'),
+  'h2-color': default('color-main'),
 
-    'h3-font-size': default('font-size-large'),
-    'h3-font-family': default('font-family-headings'),
-    'h3-color': default('color-main'),
+  'h3-font-size': default('font-size-large'),
+  'h3-font-family': default('font-family-headings'),
+  'h3-color': default('color-main'),
 
-    'h4-font-size': default('font-size-main'),
-    'h4-font-family': default('font-family-headings'),
-    'h4-color': default('color-black'),
-    'h4-font-weight': 700,
+  'h4-font-size': default('font-size-main'),
+  'h4-font-family': default('font-family-headings'),
+  'h4-color': default('color-black'),
+  'h4-font-weight': 700,
 
-    'h5-font-size': default('font-size-main'),
-    'h5-font-family': default('font-family-headings'),
-    'h5-color': default('color-main'),
+  'h5-font-size': default('font-size-main'),
+  'h5-font-family': default('font-family-headings'),
+  'h5-color': default('color-main'),
 
-    'h6-font-size': default('font-size-main'),
-    'h6-font-family': default('font-family-headings'),
-    'h6-color': default('color-main')
+  'h6-font-size': default('font-size-main'),
+  'h6-font-family': default('font-family-headings'),
+  'h6-color': default('color-main')
 ));
 
 $defaults: map-merge($defaults, (
-    // =========================================================================
-    // ================================================================= STYLING
-    // =========================================================================
-    // -------------------------------------------------------- STYLING: General
-    'padding': default('size-main'),
+  // =========================================================================
+  // ================================================================= STYLING
+  // =========================================================================
+  // -------------------------------------------------------- STYLING: General
+  'padding': default('size-main'),
 
-    // -------------------------------------------------------- STYLING: Shadows
-    'shadow-main': 0 default('size-tiny') default('size-main') default('color-main'),
-    'shadow-main-soft': 0 default('size-tiny') default('size-main') default('color-main-soft'),
-    'shadow-100': 0 default('size-tiny') default('size-tiny') default('color-grey-100'),
+  // -------------------------------------------------------- STYLING: Shadows
+  'shadow-main': 0 default('size-tiny') default('size-main') default('color-main'),
+  'shadow-main-soft': 0 default('size-tiny') default('size-main') default('color-main-soft'),
+  'shadow-100': 0 default('size-tiny') default('size-tiny') default('color-grey-100'),
 
-    // -------------------------------------------------------- STYLING: Borders
-    'border-100': 1px solid default('color-grey-100'),
-    'border-200': 2px solid default('color-grey-200'),
-    'border-300': 2px solid default('color-grey-300'),
-    'border-main': 2px solid default('color-main')
+  // -------------------------------------------------------- STYLING: Borders
+  'border-100': 1px solid default('color-grey-100'),
+  'border-200': 2px solid default('color-grey-200'),
+  'border-300': 2px solid default('color-grey-300'),
+  'border-main': 2px solid default('color-main')
 ));
 
 $defaults: map-merge($defaults, (
-    // =========================================================================
-    // ============================================================== COMPONENTS
-    // =========================================================================
-    // -------------------------------------------------------- COMPONENTS: GRID
-    'grid-item-padding': 1rem,
+  // =========================================================================
+  // ============================================================== COMPONENTS
+  // =========================================================================
+  // -------------------------------------------------------- COMPONENTS: GRID
+  'grid-item-padding': 1rem,
 
-    // ------------------------------------------------------ COMPONENTS: Button
-    'btn-bg': linear-gradient(to bottom right, default('color-main-alt'), default('color-main')),
-    'btn-border-radius': default('border-radius'),
-    'btn-font-family': default('font-family'),
-    'btn-font-weight': 600,
-    'btn-font-size': default('font-size-main'),
-    'btn-height': default('size-main'),
-    'btn-padding': default('size-small'),
+  // ------------------------------------------------------ COMPONENTS: Button
+  'btn-bg': linear-gradient(to bottom right, default('color-main-alt'), default('color-main')),
+  'btn-border-radius': default('border-radius'),
+  'btn-font-family': default('font-family'),
+  'btn-font-weight': 600,
+  'btn-font-size': default('font-size-main'),
+  'btn-height': default('size-main'),
+  'btn-padding': default('size-small'),
 
-    // -------------------------------------------------------- COMPONENTS: Form
-    'form-bg': default('color-white'),
-    'input-bg': transparent,
-    'input-height': default('size-main'),
-    'input-padding': default('size-small'),
-    'input-border': default('border-200'),
-    'input-border-focus': default('border-main'),
-    'input-border-radius': default('border-radius'),
-    'input-font-size': default('font-size-main'),
-    'input-placeholder-color': default('color-grey-300'),
+  // -------------------------------------------------------- COMPONENTS: Form
+  'form-bg': default('color-white'),
+  'input-bg': transparent,
+  'input-height': default('size-main'),
+  'input-padding': default('size-small'),
+  'input-border': default('border-200'),
+  'input-border-focus': default('border-main'),
+  'input-border-radius': default('border-radius'),
+  'input-font-size': default('font-size-main'),
+  'input-placeholder-color': default('color-grey-300'),
 
-    'checkbox-color-active': default('color-main'),
+  'checkbox-color-active': default('color-main'),
 
-    // ------------------------------------------------------- COMPONENTS: Table
-    'table-header-height': default('size-medium'),
-    'table-row-height': default('size-large'),
-    'table-cell-padding': default('size-tiny'),
-    'table-border-radius': default('border-radius'),
+  // ------------------------------------------------------- COMPONENTS: Table
+  'table-header-height': default('size-medium'),
+  'table-row-height': default('size-large'),
+  'table-cell-padding': default('size-tiny'),
+  'table-border-radius': default('border-radius'),
 
-    // ------------------------------------------------------- COMPONENTS: Modal
-    'modal-overlay': rgba(#4d465d, 0.7),
-    'modal-bg': default('color-white'),
+  // ------------------------------------------------------- COMPONENTS: Modal
+  'modal-overlay': rgba(#4d465d, 0.7),
+  'modal-bg': default('color-white'),
 
-    // -------------------------------------------------------- COMPONENTS: Card
-    'card-bg': default('color-white'),
-    'card-border-radius': default('border-radius'),
-    'card-padding': default('size-main'),
-    'card-shadow': default('shadow-main-soft'),
+  // -------------------------------------------------------- COMPONENTS: Card
+  'card-bg': default('color-white'),
+  'card-border-radius': default('border-radius'),
+  'card-padding': default('size-main'),
+  'card-shadow': default('shadow-main-soft'),
 
-    // --------------------------------------------------------- COMPONENTS: Nav
-    'nav-bg': default('color-white'),
-    'nav-height': default('size-large'),
-    'nav-padding': 0,
-    'nav-logo-width': 6.6rem,
+  // --------------------------------------------------------- COMPONENTS: Nav
+  'nav-bg': default('color-white'),
+  'nav-height': default('size-large'),
+  'nav-padding': 0,
+  'nav-logo-width': 6.6rem,
 
-    // -------------------------------------------------------- COMPONENTS: Menu
-    'menu-bg': default('color-white'),
-    'menu-item-height': default('size-main'),
-    'menu-padding': default('size-small'),
+  // -------------------------------------------------------- COMPONENTS: Menu
+  'menu-bg': default('color-white'),
+  'menu-item-height': default('size-main'),
+  'menu-padding': default('size-small'),
 
-    // ----------------------------------------------------- COMPONENTS: Loading
-    'loading-border': 0.2rem solid default('color-grey-200'),
-    'loading-color': default('color-white'),
-    'loading-size': default('size-main'),
+  // ----------------------------------------------------- COMPONENTS: Loading
+  'loading-border': 0.2rem solid default('color-grey-200'),
+  'loading-color': default('color-white'),
+  'loading-size': default('size-main'),
 
-    // ---------------------------------------------------------- COMPONENTS: HR
-    'hr-color': default('color-grey-100')
+  // ---------------------------------------------------------- COMPONENTS: HR
+  'hr-color': default('color-grey-100')
 ));
 
 

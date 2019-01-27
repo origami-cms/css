@@ -1,11 +1,17 @@
 @each $color in $colors {
-    .color-#{$color} { color: var(--color-#{$color}); }
-    .background-#{$color} { background-color: var(--color-#{$color}); }
+  .color-#{$color} {
+    @extend %color-#{$color};
+  }
+
+  .background-#{$color} {
+    @extend %background-#{$color};
+  }
 }
 
 .success {
-    color: var(--color-success);
+  @extend %success;
 }
+
 .error {
-    color: var(--color-error);
+  @extend %error;
 }

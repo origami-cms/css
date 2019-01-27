@@ -1,60 +1,55 @@
 // --------------------------------------------------------------------- Display
 .display-ib {
-    display: inline-block;
+  @extend %display-ib;
 }
+
 .display-b {
-    display: block;
+  @extend %display-b;
 }
+
 .display-f {
-    display: flex;
+  @extend %display-f;
 }
+
 // -------------------------------------------------------------------- Position
 .position-r {
-    position: relative;
+  @extend %position-r;
 }
+
 .position-a {
-    position: absolute;
+  @extend %position-a;
 }
 
 // ------------------------------------------------------------------- Centering
 .center-margin {
-    margin: auto;
+  @extend %center-margin;
 }
+
 .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  @extend %center;
 }
 
 .center-v {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  @extend %center-v;
 }
 
 .center-h {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  @extend %center-h;
+}
+
+.cover {
+  @extend %cover;
 }
 
 // ---------------------------------------------------------------------- Floats
-.float-left { float: left; }
-.float-right { float: right; }
-.clear { clear: both; }
-
-// ---------------------------------------------------------------------- Widths
-@for $i from 1 to 11 {
-    .width-#{$i * 10} { width: $i * 10%;}
-    .height-#{$i * 10} { height: $i * 10%;}
+.float-left {
+  @extend %float-left;
 }
 
+.float-right {
+  @extend %float-right;
+}
 
-.cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.clear {
+  @extend %clear;
 }

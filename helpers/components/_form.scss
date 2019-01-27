@@ -1,53 +1,64 @@
 %comp-form {
-    user-select: none;
-    display: flex;
-    flex-wrap: wrap;
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
 
-    // &, * {
-    //     @extend %reset;
-    // }
-    input, select, textarea, input[type="file"] + span.input {
-        @extend %comp-form-input-general;
+  // &, * {
+  //   @extend %reset;
+  // }
+  input,
+  select,
+  textarea,
+  input[type="file"]+span.input {
+    @extend %comp-form-input-general;
+  }
+
+  select {
+    @extend %comp-form-input-select;
+  }
+
+
+  .form-row,
+  zen-ui-form-row {
+    @extend %comp-form-row;
+  }
+
+
+  &.full-field-width {
+    width: 100%;
+
+    .form-group,
+    input,
+    button,
+    select,
+    textarea {
+      width: 100%;
+    }
+  }
+
+
+  input[type="submit"],
+  zen-ui-button {
+    @extend %comp-button;
+    width: 100%;
+  }
+
+
+  fieldset {
+    legend {
+      font-size: var(--fs-large);
+      color: var(--color-alt);
+      padding-top: var(--size-small);
+      width: 100%;
     }
 
-    select {
-        @extend %comp-form-input-select;
+    &+fieldset {
+      margin-top: var(--size-hero);
+
+      legend {
+        padding-top: var(--size-hero);
+        border-top: var(--border-100);
+      }
     }
-
-
-    .form-row, zen-ui-form-row {
-        @extend %comp-form-row;
-    }
-
-
-    &.full-field-width {
-        width: 100%;
-        .form-group, input, button, select, textarea {
-            width: 100%;
-        }
-    }
-
-
-    input[type="submit"], zen-ui-button {
-        @extend %comp-button;
-        width: 100%;
-    }
-
-
-    fieldset {
-        legend {
-            font-size: var(--fs-large);
-            color: var(--color-alt);
-            padding-top: var(--size-small);
-            width: 100%;
-        }
-
-        & + fieldset {
-            margin-top: var(--size-hero);
-            legend {
-                padding-top: var(--size-hero);
-                border-top: var(--border-100);
-            }
-        }
-    }
+  }
 }

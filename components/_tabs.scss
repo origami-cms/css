@@ -1,24 +1,24 @@
 .tabs {
-    height: 4rem;
-    line-height: 4rem;
-    border-bottom: var(--border-100);
-    user-select: none;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: var(--border-100);
+  user-select: none;
 
-    .tab {
-        cursor: pointer;
-        display: inline-block;
-        border-right: var(--border-100);
-        padding: 0 var(--size-small);
+  .tab {
+    cursor: pointer;
+    display: inline-block;
+    border-right: var(--border-100);
+    padding: 0 var(--size-small);
 
-        &.icon-only {
-            padding: 0;
-            width: 4rem;
-            text-align: center;
-        }
-
-        &:hover {
-            background-color: var(--color-grey-100);
-        }
+    &.icon-only {
+      padding: 0;
+      width: 4rem;
+      text-align: center;
     }
+
+    &:hover {
+      background-color: var(--color-grey-100);
+    }
+  }
 
 }

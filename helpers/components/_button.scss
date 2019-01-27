@@ -1,143 +1,155 @@
 %comp-button {
-    display: inline-block;
-    width: auto;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
+  display: inline-block;
+  width: auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  height: default('btn-height');
+  line-height: default('btn-height');
+  padding: 0 default('btn-padding');
+  border-radius: default('btn-border-radius');
+  color: default('color-white');
+  transition: color default('transition-time'), background default('transition-time');
+  user-select: none;
+
+  &:not([color]) {
+    background-color: default('btn-bg');
+    background: default('btn-bg');
+  }
+
+  font-family: default('btn-font-family');
+  cursor: pointer;
+  font-size: default('btn-font-size');
+  text-align: center;
+  white-space: nowrap;
+
+  * {
+    vertical-align: middle;
+  }
+
+
+  &.hollow,
+  &[hollow] {
+    @extend %comp-button-hollow;
+  }
+
+  &+& {
+    margin-left: var(--size-small);
+  }
+
+
+  &:hover {
+    filter: brightness(1.4);
+  }
+
+  &:focus {
     border: none;
-    height: default('btn-height');
-    line-height: default('btn-height');
-    padding: 0 default('btn-padding');
-    border-radius: default('btn-border-radius');
-    color: default('color-white');
-    transition: color default('transition-time'), background default('transition-time');
-    user-select: none;
-    &:not([color]) {
-        background-color: default('btn-bg');
-        background: default('btn-bg');
-    }
-    font-family: default('btn-font-family');
-    cursor: pointer;
-    font-size: default('btn-font-size');
-    text-align: center;
-    white-space: nowrap;
+    filter: brightness(0.8);
+  }
 
-    * {
-        vertical-align: middle;
+
+  &.round {
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &.has-icon {
+    padding-left: default('size-small');
+
+    .i {
+      vertical-align: top;
+      margin-right: default('size-small');
     }
 
-
-    &.hollow, &[hollow] {
-        @extend %comp-button-hollow;
+    .loader {
+      margin-top: calc(default('size-small') / 2);
     }
-    & + & {
-        margin-left: var(--size-small);
+  }
+
+  &.no-text {
+    padding: 0;
+
+    .i {
+      margin: 0;
     }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none
+  }
+
+  &>span {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
 
-    &:hover {
-        filter: brightness(1.4);
+
+  @each $size in $sizes {
+
+    &.size-#{$size},
+    &[size=#{$size}] {
+      width: auto;
+      height: default('size-#{$size}');
+      line-height: default('size-#{$size}');
+      // font-size: calc((1.6/4) * #{default('size-#{$size}')});
+      padding: 0 calc(#{default('size-#{$size}')} / 2);
+
+
+      &.icon-right {
+        padding-right: default('size-#{$size}');
+      }
     }
-
-    &:focus {
-        border: none;
-        filter: brightness(0.8);
-    }
-
-
-    &.round {
-        padding: 0;
-        border-radius: 50%;
-    }
-
-    &.has-icon {
-        padding-left: default('size-small');
-        .i {
-            vertical-align: top;
-            margin-right: default('size-small');
-        }
-        .loader {
-            margin-top: calc(default('size-small') / 2);
-        }
-    }
-
-    &.no-text {
-        padding: 0;
-        .i {
-            margin: 0;
-        }
-    }
-
-    &:disabled {
-        opacity: 0.5;
-        pointer-events: none
-    }
-
-    & > span {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-
-
-    @each $size in $sizes {
-        &.size-#{$size}, &[size=#{$size}] {
-            width: auto;
-            height: default('size-#{$size}');
-            line-height: default('size-#{$size}');
-            // font-size: calc((1.6/4) * #{default('size-#{$size}')});
-            padding: 0 calc(#{default('size-#{$size}')} / 2);
-
-            &.icon-right {
-                padding-right: default('size-#{$size}');
-            }
-        }
-    }
+  }
 }
 
 
 %comp-button-group {
-    button, .button, zen-ui-button {
-        margin-right: 1rem;
-    }
+  button, .button, zen-ui-button {
+    margin-right: 1rem;
+  }
 
-    &.float-right {
-        button, .button {
-            margin-right: 0;
-            margin-left: 1rem;
-        }
+  &.float-right {
+    button, .button {
+      margin-right: 0;
+      margin-left: 1rem;
     }
+  }
 }
 
 
 %comp-button-hollow {
-    background: transparent !important;
-    color: default('color-main');
-    padding-left: 0;
-    padding-right: 0;
+  background: transparent !important;
+  color: default('color-main');
+  padding-left: 0;
+  padding-right: 0;
 
-    @each $color in $colors {
-        &[color=#{$color}] {
-            color: var(--color-#{$color});
-        }
+  @each $color in $colors {
+    &[color=#{$color}] {
+      color: var(--color-#{$color});
     }
+  }
 }
 
 %comp-button-icon-right {
-    position: relative;
-    .i:last-of-type, zen-icon {
-        float: right;
-        margin-right: 0;
-        // position: absolute;
-        // right: 0;
-        // top: 50%;
-        // transform: translateY(-50%);
-    }
-    padding-right: 0;
+  position: relative;
 
-    // @each $size in $sizes {
-    //     &.size-#{$size}, &[size=#{$size}] {
-    //         padding-right: default('size-#{$size}');
-    //     }
-    // }
+  .i:last-of-type, zen-icon {
+    float: right;
+    margin-right: 0;
+    // position: absolute;
+    // right: 0;
+    // top: 50%;
+    // transform: translateY(-50%);
+  }
+
+  padding-right: 0;
+
+  // @each $size in $sizes {
+  //   &.size-#{$size}, &[size=#{$size}] {
+  //   padding-right: default('size-#{$size}');
+  //   }
+  // }
 }

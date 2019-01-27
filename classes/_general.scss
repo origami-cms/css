@@ -1,7 +1,19 @@
-.hide { display: none !important; }
-.round { border-radius: 50%; }
-.rounded { border-radius: var(--border-radius); }
-.no-select { user-select: none; }
-.card {
-    @extend %comp-card;
- }
+.hide {
+  @extend %hide;
+}
+
+.round {
+  @extend %round;
+}
+
+.rounded {
+  @extend %rounded;
+}
+
+.no-select {
+  @extend %no-select;
+}
+
+.ellipsis {
+  @extend %ellipsis;
+}

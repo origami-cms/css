@@ -1,0 +1,17 @@
+@each $color in $colors {
+  %color-#{$color} {
+    color: var(--color-#{$color});
+  }
+
+  %background-#{$color} {
+    background-color: var(--color-#{$color});
+  }
+}
+
+%success {
+  color: var(--color-success);
+}
+
+%error {
+  color: var(--color-error);
+}

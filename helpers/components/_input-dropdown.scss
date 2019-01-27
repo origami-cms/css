@@ -1,39 +1,40 @@
 %comp-input-dropdown {
-    position: absolute;
-    top: calc(100% - 5px);
-    left: 0;
-    width: 100%;
-    border: default('input-border');
-    border-radius: default('border-radius');
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    z-index: 100;
-    background-color: default('color-white');
+  position: absolute;
+  top: calc(100% - 5px);
+  left: 0;
+  width: 100%;
+  border: default('input-border');
+  border-radius: default('border-radius');
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  z-index: 100;
+  background-color: default('color-white');
 
-    &:empty {
-        display: none;
+  &:empty {
+    display: none;
+  }
+
+  &>* {
+    list-style: none;
+    height: default('size-main');
+    line-height: default('size-main');
+    border-bottom: default('border-100');
+    padding: 0 default('size-small');
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+
+    &:hover,
+    &.active {
+      background-color: default('color-hover');
     }
 
-    & > * {
-        list-style: none;
-        height: default('size-main');
-        line-height: default('size-main');
-        border-bottom: default('border-100');
-        padding: 0 default('size-small');
-        overflow: hidden;
-        text-overflow: ellipsis;
-        user-select: none;
-
-        &:hover, &.active {
-            background-color: default('color-hover');
-        }
-
-        &:last-child {
-            border-bottom: 0;
-        }
-
-        * {
-            vertical-align: middle;
-        }
+    &:last-child {
+      border-bottom: 0;
     }
+
+    * {
+      vertical-align: middle;
+    }
+  }
 }

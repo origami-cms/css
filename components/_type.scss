@@ -9,48 +9,48 @@
 
 // -------------------------------------------------------------------- Headings
 @for $i from 1 to 6 {
-    h#{$i} {
-        font-size: var(--h#{$i}-font-size);
-        font-family: var(--h#{$i}-font-family);
-        font-weight: var(--h#{$i}-font-weight, 400);
-        color: var(--h#{$i}-color, var(--color-text));
-    }
+  h#{$i} {
+    font-size: var(--h#{$i}-font-size);
+    font-family: var(--h#{$i}-font-family);
+    font-weight: var(--h#{$i}-font-weight, 400);
+    color: var(--h#{$i}-color, var(--color-text));
+  }
 }
 
 
 // ----------------------------------------------------------------------- Links
 a, wc-link {
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--color-main);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-main);
 }
 
 p {
-    line-height: 2;
-    margin-bottom: var(--size-small);
-    &:last-child {
-        margin-bottom: 0;
-    }
+  line-height: 2;
+  margin-bottom: var(--size-small);
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // ------------------------------------------------------------------------ Misc
 small {
-    font-size: var(--fs-small);
+  font-size: var(--fs-small);
 }
 strong {
-    font-weight: 700;
-    letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 i {
-    font-style: italic;
+  font-style: italic;
 }
 .error {
-    color: var(--color-error);
+  color: var(--color-error);
 }
 
 
 // ----------------------------------------------------------------------- Rules
 h2,
 h3 {
-    margin-bottom: var(--size-small);
+  margin-bottom: var(--size-small);
 }

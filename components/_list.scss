@@ -1,17 +1,17 @@
 .list {
-    li {
-        border-bottom: var(--border-100);
-    }
+  li {
+    border-bottom: var(--border-100);
+  }
 
-    &.selectable li {
-        cursor: pointer;
-        &:hover {
-            background-color: var(--color-grey-100);
-        }
+  &.selectable li {
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-grey-100);
     }
+  }
 
-    li.disabled {
-        pointer-events: none;
-        opacity: 0.5;
-    }
+  li.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

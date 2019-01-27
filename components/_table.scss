@@ -1,92 +1,92 @@
 table {
-    border-radius: var(--table-border-radius);
-    // overflow-y: hidden;
-    width: calc(100% + 4rem);
-    table-layout: fixed;
+  border-radius: var(--table-border-radius);
+  // overflow-y: hidden;
+  width: calc(100% + 4rem);
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+  padding: 4rem 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+
+  thead tr {
+    height: var(--table-header-height, var(--table-row-height));
+  }
+
+  tr {
+    margin-bottom: 2rem;
+    height: var(--table-row-height);
+    line-height: var(--table-row-height);
+    @extend .rounded;
+
+    td {
+      border-style: solid none;
+    }
+
+    td:first-child {
+      border-left-style: solid;
+      border-top-left-radius: var(--table-border-radius);
+      border-bottom-left-radius: var(--table-border-radius);
+    }
+
+    td:last-child {
+      border-right-style: solid;
+      border-bottom-right-radius: var(--table-border-radius);
+      border-top-right-radius: var(--table-border-radius);
+    }
+
+    th {
+      text-transform: uppercase;
+      color: var(--color-grey-300);
+      font-weight: bold;
+      letter-spacing: 1px;
+      height: var(--table-header-height, var(--table-row-height));
+      line-height: var(--table-header-height, var(--table-row-height));
+      text-align: left;
+      font-size: var(--font-size-small);
+    }
+
+    th, td {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 0 var(--table-cell-padding);
+    }
+
+    td {
+      background-color: var(--color-white);
+      height: var(--table-row-height);
+      line-height: var(--table-row-height);
+
+      &.action {
+        overflow: visible;
+      }
+
+      p {
+        line-height: 2;
+      }
+    }
+
+    th.icon, td.icon {
+      padding: 0 var(--size-small);
+      width: var(--size-main);
+      text-align: center;
+    }
+  }
+
+  &.selectable tr:hover:not(.row-header), tr.selected {
+    &, td {
+      background-color: var(--color-grey-100);
+      cursor: pointer;
+    }
+  }
+
+  &.rows-split {
     border-collapse: separate;
-    border-spacing: 0 1rem;
-    padding: 4rem 2rem;
-    margin-left: -2rem;
-    margin-right: -2rem;
+    border-spacing: 0 0.5rem;
+  }
 
-    thead tr {
-        height: var(--table-header-height, var(--table-row-height));
-    }
-
-    tr {
-        margin-bottom: 2rem;
-        height: var(--table-row-height);
-        line-height: var(--table-row-height);
-        @extend .rounded;
-
-        td {
-            border-style: solid none;
-        }
-
-        td:first-child {
-            border-left-style: solid;
-            border-top-left-radius: var(--table-border-radius);
-            border-bottom-left-radius: var(--table-border-radius);
-        }
-
-        td:last-child {
-            border-right-style: solid;
-            border-bottom-right-radius: var(--table-border-radius);
-            border-top-right-radius: var(--table-border-radius);
-        }
-
-        th {
-            text-transform: uppercase;
-            color: var(--color-grey-300);
-            font-weight: bold;
-            letter-spacing: 1px;
-            height: var(--table-header-height, var(--table-row-height));
-            line-height: var(--table-header-height, var(--table-row-height));
-            text-align: left;
-            font-size: var(--font-size-small);
-        }
-
-        th, td {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            padding: 0 var(--table-cell-padding);
-        }
-
-        td {
-            background-color: var(--color-white);
-            height: var(--table-row-height);
-            line-height: var(--table-row-height);
-
-            &.action {
-                overflow: visible;
-            }
-
-            p {
-                line-height: 2;
-            }
-        }
-
-        th.icon, td.icon {
-            padding: 0 var(--size-small);
-            width: var(--size-main);
-            text-align: center;
-        }
-    }
-
-    &.selectable tr:hover:not(.row-header), tr.selected {
-        &, td {
-            background-color: var(--color-grey-100);
-            cursor: pointer;
-        }
-    }
-
-    &.rows-split {
-        border-collapse: separate;
-        border-spacing: 0 0.5rem;
-    }
-
-    &.short-header {
-        padding-top: 0;
-    }
+  &.short-header {
+    padding-top: 0;
+  }
 }

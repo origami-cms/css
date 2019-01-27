@@ -1,13 +1,13 @@
 form {
-    @extend %comp-form;
+  @extend %comp-form;
 }
 
 @import '../animations/checkbox';
 .checkbox {
-    @extend %comp-checkbox;
+  @extend %comp-checkbox;
 }
 
 
 input[type="file"] {
-    @extend %comp-form-input-file;
+  @extend %comp-form-input-file;
 }
